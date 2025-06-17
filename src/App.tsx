@@ -1,20 +1,20 @@
-import { BrowserRouter } from 'react-router-dom'
+import Router from './router/router'
+import Nav from './components/layout/Nav'
+import Footer from './components/layout/Footer'
+
 import './App.css'
 
 function App() {
 
 
   return (
-    <BrowserRouter>
-      <input type="checkbox" id="side-menu" className="drawer-toggle" />
-      <section className="drawer-content">
+      <section className='layout'>
         <Nav />
-        <section className="main pt-16">
+        <section className='main'>
           <Router />
         </section>
         <Footer />
       </section>
-    </BrowserRouter>
   )
 }
 

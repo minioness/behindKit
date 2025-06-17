@@ -1,0 +1,67 @@
+.navContainer {
+    width: 100%;
+    background-color: white;
+
+    position: fixed;
+    z-index: 1000;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    width: 100%;
+}
+
+.navRight {
+    display: flex;
+    gap: 25px;
+}
+
+.navRight img {
+    width: 35px;
+    height: 35px;
+}
+
+.cartBtn {
+    position: relative;
+}
+
+.cartBadge {
+    position:absolute;
+    color: white;
+    background-color: #E35050;
+    border-radius: 50%;
+
+    width: 20px;
+    height: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    top: -6px;
+    right: -10px;
+
+}
+
+.hamburgerBtn button,
+.myPageBtn {
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+
+
+.menuArea {
+    display: none;
+}

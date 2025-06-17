@@ -1,0 +1,54 @@
+.footerContainer {
+    background-color: #E3E3E3;
+    font-size: 14px;
+    width: 100%;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+.customerService {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+
+    padding: 5px;
+}
+
+.customerService span:first-child {
+    font-weight: bold;
+}
+
+.companyInfo {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.companyInfo p {
+    margin: 4px;
+}
+
+.copyright {
+    font-weight: 500;
+
+    display: flex;
+    align-items: flex-end;
+}

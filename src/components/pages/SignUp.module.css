@@ -1,0 +1,74 @@
+.signUpContainer {
+    width: 100%;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+
+}
+
+.signUpWrapper {
+    width: 590px;
+    height: 590px;
+    background-color: white;
+
+    border-radius: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    font-size: 25px;
+}
+
+.title h2 {
+    margin: 0;
+}
+
+.inputId,
+.inputPwd {
+    font-size: 15px;
+}
+
+.inputName p,
+.inputId p,
+.inputPwd p {
+    margin-bottom: 5px;
+}
+
+.inputName input,
+.inputId input,
+.inputPwd input {
+    width: 430px;
+    height: 60px;
+    font-size: 15px;
+
+    padding: 8px 12px;
+    
+    outline: none;
+    border: 1px solid #BABABA;
+    border-radius: 10px;
+}
+
+.signUpBtn {
+    width: 430px;
+    height: 60px;
+    margin-top: 30px;
+    
+    border: none;
+    background-color: #E35050;
+    border-radius: 10px;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
