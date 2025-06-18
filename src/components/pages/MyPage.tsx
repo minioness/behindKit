@@ -1,8 +1,43 @@
-export default function MyPage() {
+import { Link } from 'react-router-dom';
+import type { User } from 'firebase/auth';
+
+import styles from './MyPage.module.css'
+
+interface MyPageProps {
+  user: User | null;
+}
+
+export default function MyPage({ user }: MyPageProps) {
   return (
-    <div>
-      <h1>마이페이지</h1>
-      <p>여기에 회원 정보가 들어갈 예정!</p>
+    <div className={styles.mypageContainer}>
+      <div className={styles.title}>
+        <h1>마이페이지</h1>
+      </div>
+
+      <div className={styles.userInfoWrapper}>
+        <img src='/src/assets/img/button/myPageBtn.svg' alt='프로필 이미지' />
+
+        <div className={styles.userInfo}>
+          <div className={styles.userName}>
+            <span>{user?.displayName}</span>님
+          </div>
+          <div className={styles.userEmail}>이메일: {user?.email}</div>
+          <Link to='/mypage/changeinfo' className={styles.userChangeInfo}>
+             <img src='/src/assets/img/button/settingBtn.svg' alt='회원정보수정 버튼' />
+          </Link>
+        </div>
+      </div>
+
+      <div className={styles.buttonArea}>
+        <Link to='/wishlist'>위시리스트</Link>
+        <Link to='/mypage/orders'>구매 내역</Link>
+      </div>
+
+      <Link to='/mykit'>My Kit 보기</Link>
+      
+      <button>로그아웃</button>
+
+
     </div>
   );
 }
