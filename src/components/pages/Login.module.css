@@ -85,15 +85,15 @@
 
 
 
-.kakaoLoginBtn {
+.GoogleLoginBtn {
     width: 430px;
     height: 60px;
     padding: 12px 25px;
 
-    border: none;
-    background-color: #FDD911;
+    border: 1px solid #464646;
+    background-color: white;
     border-radius: 10px;
-    color: #4B4848;
+    color: #464646;
     
     font-size: 15px;
     font-weight: bold;

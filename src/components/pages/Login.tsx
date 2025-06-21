@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-import { auth } from '../../firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, db, provider } from '../../firebase';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 
 import styles from './Login.module.css';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 export default function Login() {
 
@@ -31,6 +32,39 @@ export default function Login() {
       }
     } 
   };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      // Firestore에 이 사용자의 닉네임이 존재하는지 확인
+      const userRef = doc(db, 'users', user.uid);
+      const userDoc = await getDoc(userRef);
+
+      alert('구글 계정으로 로그인 되었습니다.');
+
+      if (!userDoc.exists()) {
+        await setDoc(userRef, {
+          name: user.displayName,
+          email: user.email,
+          nickname: '', // 처음에는 비워두고 이후에 등록하도록
+          createdAt: new Date()
+        });
+
+        // 닉네임 등록 페이지로 이동
+        alert(`${user.displayName}님, 닉네임을 등록해주세요.`);
+        navigate('/mypage/changeinfo');
+
+      } else {
+        // 기존 유저 → 마이페이지 이동
+        navigate('/mypage');
+      }
+
+    } catch (error: any) {
+      alert(`구글 로그인 실패: ${error.message}`);
+    }
+  }
 
 
 
@@ -68,9 +102,9 @@ export default function Login() {
           <span>OR</span>
         </div>
 
-        <button className={styles.kakaoLoginBtn}>
-          <img src='/src/assets/img/kakaoTalk.svg' />
-          <p>카카오톡 로그인</p>
+        <button className={styles.GoogleLoginBtn} onClick={handleGoogleLogin}>
+          <img src='/src/assets/img/Google.svg' alt='구글 아이콘' />
+          <p>구글 계정 로그인</p>
         </button>
       </div>
 

@@ -1,13 +1,65 @@
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 import type { User } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
+import { auth, db } from '../../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 import styles from './MyPage.module.css'
+
 
 interface MyPageProps {
   user: User | null;
 }
 
 export default function MyPage({ user }: MyPageProps) {
+
+  const [nickName, setNickName] = useState('');
+  const [loading, setLoading] = useState(true); 
+  
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    const fetchNickName = async () => {
+      if (!user) {
+      setLoading(false);
+      return;
+      }
+      
+      try {
+        // Firestore의 'users' 컬렉션에서 현재 로그인한 유저의 UID로 문서를 참조
+        const docRef = doc(db, 'users', user.uid);
+        // Firestore에서 해당 문서의 데이터를 가져옴
+        const docSnap =  await getDoc(docRef);
+
+        if (docSnap.exists()) {
+        setNickName(docSnap.data().nickName);
+        }
+      } catch (error) {
+      console.error('닉네임 불러오기 실패:', error);
+      } finally {
+      setLoading(false);
+      }
+    };
+    fetchNickName();
+  }, [user]);
+
+  if (loading) return null;
+  
+  
+
+  const handleLogout = async() => {
+    try {
+      await signOut(auth);
+      alert('로그아웃 되었습니다.');
+      navigate('/login');
+    } catch (error) {
+      alert(`로그아웃 실패: ${error}`)
+    }
+  }
+
+
   return (
     <div className={styles.mypageContainer}>
       <div className={styles.title}>
@@ -19,12 +71,12 @@ export default function MyPage({ user }: MyPageProps) {
 
         <div className={styles.userInfo}>
           <div className={styles.userName}>
-            <span>{user?.displayName || '사용자'}</span>님, 반가워요!
+            <span>{nickName || '사용자'}</span>님, 반가워요!
           </div>
           <div className={styles.userEmail}>이메일: {user?.email}</div>
         </div>
 
-        <Link to='/mypage/changeinfo' className={styles.userChangeInfo}>
+        <Link to='/mypage/editinfo' className={styles.userChangeInfo}>
           <img src='/src/assets/img/button/settingBtn.svg' alt='회원정보수정 버튼' />
         </Link>
       </div>
@@ -36,9 +88,9 @@ export default function MyPage({ user }: MyPageProps) {
       </div>
 
       <Link to='/mykit' className={styles.mykitBtn}>My Kit 보기</Link>
-      
-      <button className={styles.logoutBtn}>로그아웃</button>
 
+
+      <button onClick={handleLogout} className={styles.logoutBtn}>로그아웃</button>
 
     </div>
   );
