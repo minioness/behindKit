@@ -1,44 +1,41 @@
-/* components/common/Slider.module.css */
 .carouselContainer {
   position: relative;
   width: 100%;
   padding-top: 60px;
-
 }
 
 .carouselSlide {
   position: relative;
-
 }
 
 .carouselDescription {
   position: absolute;
   bottom: 33%;
-  left: 1.5rem;
+  left: 24px;
   text-align: left;
   z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
   .carouselDescription {
-    left: 5rem;
+    left: 80px;
   }
 }
 
 .carouselTitle {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
   color: #464646;
 }
 
 @media screen and (min-width: 768px) {
   .carouselTitle {
-    font-size: 2.25rem;
+    font-size: 36px;
   }
 }
 
 .carouselText {
-  margin-top: 0.5rem;
+  margin-top: 8px;
   color: #464646;
 }
 
@@ -46,4 +43,3 @@
   width: 80%;
   height: 700px;
 }
-
