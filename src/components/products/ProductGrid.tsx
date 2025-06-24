@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { formatPrice } from '../../utils/formatPrice';
-
 import styles from './ProductGrid.module.css';
+
 
 interface Product {
   id: number;
@@ -17,6 +17,7 @@ interface ProductGridProps {
 
 export default function ProductGrid({ products }: ProductGridProps) {
   const [wishlist, setWishlist] = useState<number[]>([]);
+  
 
   const handleToggleWishlist = (productId: number) => {
     setWishlist((prev) =>
@@ -26,42 +27,52 @@ export default function ProductGrid({ products }: ProductGridProps) {
     );
   };
 
+
   return (
-    <div className={styles.grid}>
-      {products.map((product) => {
-        const isWished = wishlist.includes(product.id);
+    <div>
+      <div className={styles.grid}>
+        {products.map((product) => {
+          const isWished = wishlist.includes(product.id);
 
-        return (
-          <div key={product.id} className={styles.card}>
-            <div className={styles.thumbnailWrapper}>
-              <img
-                src={product.thumbnail}
-                alt={product.title}
-                className={styles.thumbnail}
-              />
-              <button
-                className={styles.wishButton}
-                onClick={() => handleToggleWishlist(product.id)}
-              >
+          return (
+            <div key={product.id} className={styles.card}>
+              <div className={styles.thumbnailWrapper}>
                 <img
-                  src={
-                    isWished
-                      ? '/src/assets/img/button/wishBtn.svg'
-                      : '/src/assets/img/button/noWishBtn.svg'
-                  }
-                  alt="찜하기"
+                  src={product.thumbnail}
+                  alt={product.title}
+                  className={styles.thumbnail}
                 />
-              </button>
-            </div>
+                <button
+                  className={styles.wishButton}
+                  onClick={() => handleToggleWishlist(product.id)}
+                >
+                  <img
+                    src={
+                      isWished
+                        ? 'src/assets/img/button/WishBtn.svg'
+                        : 'src/assets/img/button/noWishBtn.svg'
+                    }
+                    alt="찜하기"
+                  />
+                </button>
+              </div>
 
-            <div className={styles.info}>
-              <h3 className={styles.title}>{product.title}</h3>
-              <p className={styles.price}>{formatPrice(product.price)}</p>
-              <p className={styles.category}>{product.category}</p>
+  
+              <button className={styles.cartArea}>
+                <img src='/src/assets/img/button/cartBtn.svg' />
+                담기
+              </button>
+
+
+              <div className={styles.info}>
+                <h3 className={styles.title}>{product.title}</h3>
+                <p className={styles.price}>{formatPrice(product.price)}</p>
+                <p className={styles.category}>{product.category}</p>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }

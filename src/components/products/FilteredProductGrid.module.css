@@ -1,0 +1,20 @@
+.pagination {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.pageButton {
+  margin: 0 8px;
+  padding: 8px 12px;
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.activePage {
+  background-color: #E35050;
+  color: white;
+  border-radius: 10px;
+}

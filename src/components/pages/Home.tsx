@@ -1,13 +1,17 @@
-import Slider from '../common/Slider';
+import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 
-import ProductGrid from '../products/ProductGrid';
 import products from '../../data/data.json';
+import Slider from '../common/Slider';
+import FilteredProductGrid from '../products/FilteredProductGrid';
 
 import styles from './Home.module.css';
 
 
 export default function Home() {
+
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <div className={styles.homeContainer}>
       <Slider />
@@ -19,6 +23,8 @@ export default function Home() {
             type="text"
             placeholder="검색어를 입력하세요"
             className={styles.searchInput}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
 
@@ -35,7 +41,7 @@ export default function Home() {
 
       </div>
 
-      <ProductGrid products={products}/>
+      <FilteredProductGrid products={products} searchTerm={searchTerm}/>
       
     </div>
   );
