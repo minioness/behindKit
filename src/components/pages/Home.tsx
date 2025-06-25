@@ -1,19 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
+import { useProducts } from '../../hooks/useProducts';
 import { FiSearch } from 'react-icons/fi';
 
-import products from '../../data/data.json';
+
 import Slider from '../common/Slider';
 import FilteredProductGrid from '../products/FilteredProductGrid';
 
 import styles from './Home.module.css';
 import cx from 'clsx';
 
-// 카테고리 & 정렬 목록
-const categories = Array.from(new Set(products.map((product) => product.category)));
-const CATEGORY_LIST = ['전체', ...categories];
+// 정렬 목록
 const SORT_LIST = ['기본순', '낮은 가격순', '높은 가격순', '이름순'];
 
 export default function Home() {
+  const { products, categories } = useProducts();
+  const CATEGORY_LIST = ['전체', ...categories];
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('전체');
   const [showCategoryList, setShowCategoryList] = useState(false);
