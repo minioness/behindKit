@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { formatPrice } from '../../utils/formatPrice';
 import styles from './ProductGrid.module.css';
+import { Link } from 'react-router-dom';
 
 
 interface Product {
@@ -37,11 +38,13 @@ export default function ProductGrid({ products }: ProductGridProps) {
           return (
             <div key={product.id} className={styles.card}>
               <div className={styles.thumbnailWrapper}>
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  className={styles.thumbnail}
-                />
+                <Link to={`/product/${product.id}`}>
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className={styles.thumbnail}
+                  />
+                </Link>
                 <button
                   className={styles.wishButton}
                   onClick={() => handleToggleWishlist(product.id)}
@@ -64,11 +67,11 @@ export default function ProductGrid({ products }: ProductGridProps) {
               </button>
 
 
-              <div className={styles.info}>
+              <Link to={`/product/${product.id}`} className={styles.info}>
                 <h3 className={styles.title}>{product.title}</h3>
                 <p className={styles.price}>{formatPrice(product.price)}</p>
                 <p className={styles.category}>{product.category}</p>
-              </div>
+              </Link>
             </div>
           );
         })}
