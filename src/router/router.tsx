@@ -10,6 +10,7 @@ import Orders from "../components/pages/Orders";
 import WishList from "../components/pages/WishList";
 import MyKit from "../components/pages/MyKit";
 import EditInfo from "../components/pages/editInfo";
+import ProductDetail from "../components/products/ProductDetail";
 
 
 
@@ -22,6 +23,7 @@ const Router = ({ user }: RouterProps): JSX.Element => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/mypage" element={<MyPage user={user}/>} />
