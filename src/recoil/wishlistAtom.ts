@@ -1,5 +1,7 @@
 import { atom } from "recoil"
 
+
+
 export const wishlistState = atom<number[]>({
     key: 'wishlistState',
     default: [],

@@ -4,28 +4,50 @@ import { Link } from 'react-router-dom';
 import { useProducts } from '../../../hooks/useProducts';
 import { formatPrice } from '../../../utils/formatPrice';
 
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
+import { cartState } from '../../../recoil/cartAtom';
 import { wishlistState } from '../../../recoil/wishlistAtom';
 
 import styles from './WishListPage.module.css'
 
 
 export default function WishListPage() {
-  const wishlist = useRecoilValue(wishlistState);
+  const [ wishlist, setWishlist ] = useRecoilState(wishlistState);
+  const [ , setCart ] = useRecoilState(cartState);
   const { products } = useProducts();
 
   const wishProducts = products.filter((p) => wishlist.includes(p.id));
 
-  if (!wishProducts) return <p>상품을 찾을 수 없습니다.</p>;
+  const handleRemove = (productId: number) => {
+    setWishlist((prev) => prev.filter((id) => id !== productId));
+  }
+
+  const handleCartAdd = (productId: number) => {
+    setCart((prev) => {
+      // 이미 장바구니에 있는 경우
+      if (prev.includes(productId)) {
+        alert('이미 장바구니에 담긴 상품입니다.');
+        return prev;
+      } else {
+        // 장바구니에 없는 경우 추가
+        alert('장바구니에 담겼습니다!');
+        return [...prev, productId];
+      }
+    });
+  };
+
+  
+
+  if (wishProducts.length === 0) return <p>위시리스트에 담긴 상품이 없습니다</p>;
 
 
   return (
-    <div className={styles.WishListPageContainer}>
+    <div className={styles.wishListPageContainer}>
       <div className={styles.title}>
         <h1>위시리스트</h1>
       </div>
 
-      <ul className={styles.WishListWrapper}>
+      <ul className={styles.wishListWrapper}>
         {wishProducts.map((product) => (
 
           <li key={product.id}>
@@ -43,12 +65,12 @@ export default function WishListPage() {
             </div>
 
             <div className={styles.buttonArea}>
-              <button className={styles.wishBtn}>
-                <img src='/src/assets/img/button/wishBtn.svg' />
+              <button className={styles.deleteBtn} onClick={() => handleRemove(product.id)}>
+                삭제
               </button>
 
-              <button className={styles.cartBtn}>
-                <img src='/src/assets/img/button/cartBtn.svg' />
+              <button className={styles.cartBtn} onClick={() => handleCartAdd(product.id)}>
+                장바구니 담기
               </button>
             </div>
           </li>

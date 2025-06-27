@@ -1,4 +1,4 @@
-.WishListPageContainer {
+.wishListPageContainer {
     width: 100%;
     height: 100%;
     background-color: white;
@@ -22,7 +22,7 @@
 }
 
 
-.WishListWrapper {
+.wishListWrapper {
     list-style: none;
     
     display: flex;
@@ -37,7 +37,7 @@
     width: 80%;
 }
 
-.WishListWrapper li {
+.wishListWrapper li {
     display: flex;
 
     width: 90%;
@@ -100,10 +100,28 @@
     
 }
 
-.wishBtn,
+.deleteBtn,
 .cartBtn {
-    border: none;
     background-color: transparent;
-    cursor: pointer;
+
+    width: 200px;
+    height: 60px;
+
+    font-size: 16px;
+    border-radius:15px;
+}
+
+.deleteBtn {
+    border: 1px solid #ccc;
+    color: #464646;
+}
+
+
+.cartBtn {
+    border: 1px solid #E35050;
+    color: #E35050;
+    
+    font-weight: bold;
+
 }
 

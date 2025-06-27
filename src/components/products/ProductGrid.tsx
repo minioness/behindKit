@@ -1,10 +1,9 @@
-
 import { formatPrice } from '../../utils/formatPrice';
 import styles from './ProductGrid.module.css';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { wishlistState } from '../../recoil/wishlistAtom';
-
+import { cartState } from '../../recoil/cartAtom';
 
 interface Product {
   id: number;
@@ -20,7 +19,7 @@ interface ProductGridProps {
 
 export default function ProductGrid({ products }: ProductGridProps) {
   const [wishlist, setWishlist] = useRecoilState(wishlistState);
-  
+  const [cart, setCart] = useRecoilState(cartState);
 
   const handleToggleWishlist = (productId: number) => {
     setWishlist((prev) =>
@@ -30,6 +29,15 @@ export default function ProductGrid({ products }: ProductGridProps) {
     );
   };
 
+  const handleCartAdd = (productId: number) => {
+    if (cart.includes(productId)) {
+      alert('이미 장바구니에 담긴 상품입니다.');
+      return;
+    }
+
+    setCart([...cart, productId]);
+    alert('장바구니에 담겼습니다!');
+  };
 
   return (
     <div>
@@ -62,12 +70,13 @@ export default function ProductGrid({ products }: ProductGridProps) {
                 </button>
               </div>
 
-  
-              <button className={styles.cartArea}>
-                <img src='/src/assets/img/button/cartBtn.svg' />
+              <button
+                className={styles.cartArea}
+                onClick={() => handleCartAdd(product.id)}
+              >
+                <img src="/src/assets/img/button/cartBtn.svg" />
                 담기
               </button>
-
 
               <Link to={`/product/${product.id}`} className={styles.info}>
                 <h3 className={styles.title}>{product.title}</h3>
