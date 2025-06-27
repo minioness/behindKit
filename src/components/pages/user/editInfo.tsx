@@ -4,7 +4,7 @@ import styles from './EditInfo.module.css'
 
 import { reauthenticateWithCredential, updatePassword, type User } from 'firebase/auth';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
-import { db } from '../../firebase';
+import { db } from '../../../firebase';
 import { EmailAuthProvider } from 'firebase/auth/web-extension';
 
 

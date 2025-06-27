@@ -1,7 +1,9 @@
-import { useState } from 'react';
+
 import { formatPrice } from '../../utils/formatPrice';
 import styles from './ProductGrid.module.css';
 import { Link } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { wishlistState } from '../../recoil/wishlistAtom';
 
 
 interface Product {
@@ -17,7 +19,7 @@ interface ProductGridProps {
 }
 
 export default function ProductGrid({ products }: ProductGridProps) {
-  const [wishlist, setWishlist] = useState<number[]>([]);
+  const [wishlist, setWishlist] = useRecoilState(wishlistState);
   
 
   const handleToggleWishlist = (productId: number) => {

@@ -16,7 +16,7 @@ export default function Nav({user}: { user: User | null }) {
                 </div>
 
                 <div className={styles.navRight}>
-                    <Link to='/wish'>
+                    <Link to='/wishlist'>
                         <img src="/src/assets/img/button/wishBtn.svg" alt="찜"/>
                     </Link>
                     <Link to='/cart' className={styles.cartBtn}>

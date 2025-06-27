@@ -1,11 +1,14 @@
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { useProducts } from '../../hooks/useProducts';
 import { formatPrice } from '../../utils/formatPrice';
 
+import { useRecoilState } from 'recoil';
+
 import styles from './ProductDetailGrid.module.css';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { wishlistState } from '../../recoil/wishlistAtom';
+
 
 
 export default function ProductDetailGrid() {
@@ -14,7 +17,16 @@ export default function ProductDetailGrid() {
     const { products } = useProducts();
     const product = products.find((p) => p.id === Number(id));
 
-    
+    const [wishlist, setWishlist] = useRecoilState(wishlistState);
+    const isWished =  product ? wishlist.includes(product.id) : false;
+
+    const handleToggleWishlist = (productId: number) => {
+        setWishlist((prev) =>
+            prev.includes(productId)
+            ? prev.filter((id) => id !== productId)
+            : [...prev, productId]
+        );
+    };
 
 
     if (!product) return <p>상품을 찾을 수 없습니다.</p>;
@@ -37,9 +49,14 @@ export default function ProductDetailGrid() {
             
 
                 <div className={styles.btnGroup}>
-                    <button className={styles.wishBtn}>
+                    <button className={styles.wishBtn} onClick={() => handleToggleWishlist(product.id)}>
                         <img 
-                            src='/src/assets/img/button/noWishBtn.svg'    
+                            src={
+                                isWished
+                                    ? '/src/assets/img/button/WishBtn.svg'
+                                    : '/src/assets/img/button/noWishBtn.svg'
+                                }
+                                alt="찜하기"
                         />
                     </button>
 

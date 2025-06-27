@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import type { User } from 'firebase/auth';
 import { signOut } from 'firebase/auth';
-import { auth, db } from '../../firebase';
+import { auth, db } from '../../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
 import styles from './MyPage.module.css'

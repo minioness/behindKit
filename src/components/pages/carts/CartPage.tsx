@@ -1,4 +1,4 @@
-export default function CartView() {
+export default function CartPage() {
   return (
     <div>
       <h1>장바구니</h1>
