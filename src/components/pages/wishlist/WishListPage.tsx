@@ -38,7 +38,21 @@ export default function WishListPage() {
 
   
 
-  if (wishProducts.length === 0) return <p>위시리스트에 담긴 상품이 없습니다</p>;
+  if (wishProducts.length === 0) return(
+
+    <div className={styles.wishListPageContainer}>
+      <div className={styles.title}>
+        <h1>위시리스트</h1>
+      </div>
+
+      <div className={styles.wishCommentWrapper}>
+          <p className={styles.wishlistComment}>위시리트스에 담긴 상품이 없습니다</p>
+
+          <Link to='/'>담으러 가기</Link>
+      </div>
+
+    </div>
+  )
 
 
   return (

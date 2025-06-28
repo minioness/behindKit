@@ -21,7 +21,13 @@ export default function CartPage() {
         setCart((prev) => prev.filter((id) => id !== productId));
     }
 
-    if(cartProducts.length === 0) return <p>장바구니에 담긴 상품이 없습니다</p>
+    if(cartProducts.length === 0) return (
+
+      <div className={styles.cartWrapper}>
+        <p className={styles.cartComment}>장바구니에 담긴 상품이 없습니다</p>
+        <Link to='/'>담으러 가기</Link>
+      </div>
+    )
 
 
   return (
