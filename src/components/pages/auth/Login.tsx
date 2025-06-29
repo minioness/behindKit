@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 import { auth, db, provider } from '../../../firebase';
-import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { browserSessionPersistence, setPersistence, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 
 import styles from './Login.module.css';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
@@ -17,7 +17,12 @@ export default function Login() {
   const handleLogin = async(e: React.FormEvent) => {
     e.preventDefault();
     try {
+      // 세션으로 유지 설정
+      await setPersistence(auth, browserSessionPersistence);
+
+      // 로그인
       await signInWithEmailAndPassword(auth, email, password);
+
       alert('로그인 성공');
       navigate('/');
     } catch(error: any) {
@@ -35,6 +40,8 @@ export default function Login() {
 
   const handleGoogleLogin = async () => {
     try {
+      await setPersistence(auth, browserSessionPersistence);
+      
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
