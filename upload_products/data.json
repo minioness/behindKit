@@ -1,0 +1,290 @@
+[
+  {
+    "id": 1,
+    "title": "수익 정산 템플릿",
+    "description": "수익 정산 템플릿에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 13800,
+    "category": "생산성",
+    "thumbnail": "/src/assets/img/products/product-1.png",
+    "fileUrl": "/downloads/product-1.zip"
+  },
+  {
+    "id": 2,
+    "title": "유튜브 콘텐츠 캘린더",
+    "description": "유튜브 콘텐츠 캘린더에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 13200,
+    "category": "생산성",
+    "thumbnail": "/src/assets/img/products/product-2.png",
+    "fileUrl": "/downloads/product-2.zip"
+  },
+  {
+    "id": 3,
+    "title": "VSCO 프리셋",
+    "description": "VSCO 프리셋에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 9300,
+    "category": "프리셋",
+    "thumbnail": "/src/assets/img/products/product-3.png",
+    "fileUrl": "/downloads/product-3.zip"
+  },
+  {
+    "id": 4,
+    "title": "작심 3일 목표관리",
+    "description": "작심 3일 목표관리에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 12500,
+    "category": "생산성",
+    "thumbnail": "/src/assets/img/products/product-4.png",
+    "fileUrl": "/downloads/product-4.zip"
+  },
+  {
+    "id": 5,
+    "title": "자기소개서 템플릿",
+    "description": "자기소개서 템플릿에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 14300,
+    "category": "커리어",
+    "thumbnail": "/src/assets/img/products/product-5.png",
+    "fileUrl": "/downloads/product-5.zip"
+  },
+  {
+    "id": 6,
+    "title": "독서노트 양식",
+    "description": "독서노트 양식에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 13800,
+    "category": "기획",
+    "thumbnail": "/src/assets/img/products/product-6.png",
+    "fileUrl": "/downloads/product-6.zip"
+  },
+  {
+    "id": 7,
+    "title": "여행 경비 계산기",
+    "description": "여행 경비 계산기에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 13000,
+    "category": "여행",
+    "thumbnail": "/src/assets/img/products/product-7.png",
+    "fileUrl": "/downloads/product-7.zip"
+  },
+  {
+    "id": 8,
+    "title": "만년 다이어리",
+    "description": "만년 다이어리에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 11600,
+    "category": "여행",
+    "thumbnail": "/src/assets/img/products/product-8.png",
+    "fileUrl": "/downloads/product-8.zip"
+  },
+  {
+    "id": 9,
+    "title": "포트폴리오 노션 템플릿",
+    "description": "포트폴리오 노션 템플릿에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 9100,
+    "category": "프리셋",
+    "thumbnail": "/src/assets/img/products/product-9.png",
+    "fileUrl": "/downloads/product-9.zip"
+  },
+  {
+    "id": 10,
+    "title": "블로그 운영 플래너",
+    "description": "블로그 운영 플래너에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 9500,
+    "category": "프리셋",
+    "thumbnail": "/src/assets/img/products/product-10.png",
+    "fileUrl": "/downloads/product-10.zip"
+  },
+  {
+    "id": 11,
+    "title": "콘텐츠 제작 체크리스트",
+    "description": "콘텐츠 제작 체크리스트에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 9300,
+    "category": "프리셋",
+    "thumbnail": "/src/assets/img/products/product-11.png",
+    "fileUrl": "/downloads/product-11.zip"
+  },
+  {
+    "id": 12,
+    "title": "커스터마이징 가능한 가계부",
+    "description": "커스터마이징 가능한 가계부에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 9500,
+    "category": "프리셋",
+    "thumbnail": "/src/assets/img/products/product-12.png",
+    "fileUrl": "/downloads/product-12.zip"
+  },
+  {
+    "id": 13,
+    "title": "브랜딩 컬러 팔레트",
+    "description": "브랜딩 컬러 팔레트에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 9200,
+    "category": "콘텐츠",
+    "thumbnail": "/src/assets/img/products/product-13.png",
+    "fileUrl": "/downloads/product-13.zip"
+  },
+  {
+    "id": 14,
+    "title": "주간 업무 리포트",
+    "description": "주간 업무 리포트에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 9900,
+    "category": "콘텐츠",
+    "thumbnail": "/src/assets/img/products/product-14.png",
+    "fileUrl": "/downloads/product-14.zip"
+  },
+  {
+    "id": 15,
+    "title": "커리어 로드맵",
+    "description": "커리어 로드맵에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 15000,
+    "category": "커리어",
+    "thumbnail": "/src/assets/img/products/product-15.png",
+    "fileUrl": "/downloads/product-15.zip"
+  },
+  {
+    "id": 16,
+    "title": "인스타그램 릴스 기획표",
+    "description": "인스타그램 릴스 기획표에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 10600,
+    "category": "콘텐츠",
+    "thumbnail": "/src/assets/img/products/product-16.png",
+    "fileUrl": "/downloads/product-16.zip"
+  },
+  {
+    "id": 17,
+    "title": "프리랜서 계약서 양식",
+    "description": "프리랜서 계약서 양식에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 14800,
+    "category": "커리어",
+    "thumbnail": "/src/assets/img/products/product-17.png",
+    "fileUrl": "/downloads/product-17.zip"
+  },
+  {
+    "id": 18,
+    "title": "피드백 기록지",
+    "description": "피드백 기록지에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 15100,
+    "category": "커리어",
+    "thumbnail": "/src/assets/img/products/product-18.png",
+    "fileUrl": "/downloads/product-18.zip"
+  },
+  {
+    "id": 19,
+    "title": "블로그 SEO 키워드 정리표",
+    "description": "블로그 SEO 키워드 정리표에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 14200,
+    "category": "커리어",
+    "thumbnail": "/src/assets/img/products/product-19.png",
+    "fileUrl": "/downloads/product-19.zip"
+  },
+  {
+    "id": 20,
+    "title": "퇴사 후 일정관리 플래너",
+    "description": "퇴사 후 일정관리 플래너에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 13100,
+    "category": "커리어",
+    "thumbnail": "/src/assets/img/products/product-20.png",
+    "fileUrl": "/downloads/product-20.zip"
+  },
+  {
+    "id": 21,
+    "title": "타임블럭 타이머 시트",
+    "description": "타임블럭 타이머 시트에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 10700,
+    "category": "콘텐츠",
+    "thumbnail": "/src/assets/img/products/product-21.png",
+    "fileUrl": "/downloads/product-21.zip"
+  },
+  {
+    "id": 22,
+    "title": "퍼스널 브랜딩 셀프 인터뷰",
+    "description": "퍼스널 브랜딩 셀프 인터뷰에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 13000,
+    "category": "자기계발",
+    "thumbnail": "/src/assets/img/products/product-22.png",
+    "fileUrl": "/downloads/product-22.zip"
+  },
+  {
+    "id": 23,
+    "title": "이력서 템플릿",
+    "description": "이력서 템플릿에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 12900,
+    "category": "커리어",
+    "thumbnail": "/src/assets/img/products/product-23.png",
+    "fileUrl": "/downloads/product-23.zip"
+  },
+  {
+    "id": 24,
+    "title": "심플한 업무 플래너",
+    "description": "심플한 업무 플래너에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 12000,
+    "category": "생산성",
+    "thumbnail": "/src/assets/img/products/product-24.png",
+    "fileUrl": "/downloads/product-24.zip"
+  },
+  {
+    "id": 25,
+    "title": "일일 감사 저널",
+    "description": "일일 감사 저널에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 12500,
+    "category": "자기계발",
+    "thumbnail": "/src/assets/img/products/product-25.png",
+    "fileUrl": "/downloads/product-25.zip"
+  },
+  {
+    "id": 26,
+    "title": "업무 루틴 트래커",
+    "description": "업무 루틴 트래커에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 11200,
+    "category": "자기계발",
+    "thumbnail": "/src/assets/img/products/product-26.png",
+    "fileUrl": "/downloads/product-26.zip"
+  },
+  {
+    "id": 27,
+    "title": "취미 기록용 캘린더",
+    "description": "취미 기록용 캘린더에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 11200,
+    "category": "자기계발",
+    "thumbnail": "/src/assets/img/products/product-27.png",
+    "fileUrl": "/downloads/product-27.zip"
+  },
+  {
+    "id": 28,
+    "title": "팀 협업 회의록",
+    "description": "팀 협업 회의록에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 13400,
+    "category": "기획",
+    "thumbnail": "/src/assets/img/products/product-28.png",
+    "fileUrl": "/downloads/product-28.zip"
+  },
+  {
+    "id": 29,
+    "title": "오픈마켓 판매용 상품설명 템플릿",
+    "description": "오픈마켓 판매용 상품설명 템플릿에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 14400,
+    "category": "기획",
+    "thumbnail": "/src/assets/img/products/product-29.png",
+    "fileUrl": "/downloads/product-29.zip"
+  },
+  {
+    "id": 30,
+    "title": "인터뷰 질문 리스트",
+    "description": "인터뷰 질문 리스트에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 13800,
+    "category": "기획",
+    "thumbnail": "/src/assets/img/products/product-30.png",
+    "fileUrl": "/downloads/product-30.zip"
+  },
+  {
+    "id": 31,
+    "title": "프로젝트 피드백 시트",
+    "description": "프로젝트 피드백 시트에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 12900,
+    "category": "기획",
+    "thumbnail": "/src/assets/img/products/product-31.png",
+    "fileUrl": "/downloads/product-31.zip"
+  },
+  {
+    "id": 32,
+    "title": "UX 디자이너용 포트폴리오 템플릿",
+    "description": "UX 디자이너용 포트폴리오 템플릿에 최적화된 노션 템플릿/디지털 파일입니다. 실사용자 피드백을 기반으로 제작된 고퀄리티 파일이에요.",
+    "price": 11900,
+    "category": "기획",
+    "thumbnail": "/src/assets/img/products/product-32.png",
+    "fileUrl": "/downloads/product-32.zip"
+  }
+]

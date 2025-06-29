@@ -1,9 +1,11 @@
 import { formatPrice } from '../../utils/formatPrice';
-import styles from './ProductGrid.module.css';
 import { Link } from 'react-router-dom';
+
 import { useRecoilState } from 'recoil';
 import { wishlistState } from '../../recoil/wishlistAtom';
 import { cartState } from '../../recoil/cartAtom';
+
+import styles from './ProductGrid.module.css';
 
 interface Product {
   id: number;
@@ -11,6 +13,7 @@ interface Product {
   price: number;
   category: string;
   thumbnail: string;
+  description: string;
 }
 
 interface ProductGridProps {

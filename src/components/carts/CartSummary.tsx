@@ -6,11 +6,13 @@ import { cartState } from "../../recoil/cartAtom";
 import { useProducts } from "../../hooks/useProducts";
 
 import styles from './CartSummary.module.css'
+import { useNavigate } from "react-router-dom";
 
 export default function CartSummary() {
 
     const cart = useRecoilValue(cartState);
     const { products } = useProducts();
+    const navigate = useNavigate();
 
     const cartProducts = products.filter((p) => cart.includes(p.id));
 
@@ -65,8 +67,14 @@ export default function CartSummary() {
                 <button
                     className={styles.payButton}
                     disabled={cart.length === 0}
+                    onClick={() => 
+                        {
+                            alert('결제가 완료되었습니다!');
+                            navigate('/order-complete');
+                        }
+                    }
                 >
-                    결제하기
+                    {cart.length === 0 ? '상품을 담아주세요' : '결제하기'}
                 </button>
             </div>
 

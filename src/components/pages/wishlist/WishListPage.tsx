@@ -48,7 +48,7 @@ export default function WishListPage() {
       <div className={styles.wishCommentWrapper}>
           <p className={styles.wishlistComment}>위시리트스에 담긴 상품이 없습니다</p>
 
-          <Link to='/'>담으러 가기</Link>
+          <Link to='/'>상품 담으러 가기</Link>
       </div>
 
     </div>
