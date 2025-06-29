@@ -84,7 +84,7 @@
     text-align: left;
 }
 
-.userInfo div input {
+.inputField {
     width: 430px;
     height: 60px;
     font-size: 18px;
@@ -94,6 +94,14 @@
     outline: none;
     border: 1px solid #BABABA;
     border-radius: 10px;
+}
+
+.inputField:focus {
+    border: 2px solid #E35050;
+}
+
+input[readonly]:focus {
+  border: 1px solid #BABABA;
 }
 
 .userInfo div button {

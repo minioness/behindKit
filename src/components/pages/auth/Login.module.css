@@ -56,6 +56,10 @@
     border-radius: 10px;
 }
 
+.inputField:focus {
+    border: 2px solid #E35050;
+}
+
 
 .loginBtn {
     width: 430px;
