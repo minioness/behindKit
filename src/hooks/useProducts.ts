@@ -10,6 +10,7 @@ interface Product {
   category: string;
   thumbnail: string;
   description: string;
+  fileUrl: string;
 }
 
 

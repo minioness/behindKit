@@ -1,15 +1,52 @@
+import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
-import { Link } from 'react-router-dom';
 import styles from './OrderComplete.module.css';
+import { formatPrice } from '../../../utils/formatPrice';
 
+
+interface Order {
+  orderId: string;
+  createdAt: any;
+  totalPrice: number;
+  items: {
+    id: number;
+    title: string;
+    price: number;
+    thumbnail: string;
+    fileUrl: string;
+  }[];
+}
 
 
 export default function OrderComplete() {
-    // const { id } = useParams();
 
-    // const { products } = useProducts();
-    // const product = products.find((p) => p.id === Number(id));
+    const [searchParams] = useSearchParams();
+    const [order, setOrder] = useState<Order | null>(null);
+
+    const orderId = searchParams.get("orderId");
+
+
+    useEffect(() => {
+        async function fetchOrder() {
+            if(!orderId) return;
+
+            const ref = doc(db, "orders", orderId);
+            const snap = await getDoc(ref);
+
+            if (snap.exists()) {
+                setOrder(snap.data() as Order);
+            } else {
+                alert('주문 정보 없음');
+            }
+        }
+        fetchOrder();
+    }, [orderId])
+
+    if (!order) return <div>주문 정보를 불러오는 중...</div>;
 
     return (
         <div className={styles.orderCompleteContainer}>
@@ -24,26 +61,40 @@ export default function OrderComplete() {
             </div>
 
             <div className={styles.orderInfo}>
-                <div className={styles.orderNumber}></div>
-                <div className={styles.orderPrice}></div>
+                <div className={styles.orderNumber}>
+                    <p>주문 번호</p>
+                    <p>{order.orderId}</p>
+                </div>
+                <div className={styles.orderPrice}>
+                    <p>결제 금액</p>
+                    <p>{formatPrice(order.totalPrice)}</p>
+                </div>
                 <div className={styles.orderDownloadArea}>
-                    <div>
-                        {/* <Link to={`/product/${product.id}`}>
-                            <img src={product.thumbnail} alt={product.title} className={styles.productImg}/>
-                        </Link>
-                        <p className={styles.title}>{product.title}</p> */}
-                    </div>
+                    {order.items.map(item => (
+                        <li key={item.id} className={styles.downloadItem}>
 
-                    <button>
-                        <img src='/src/assets/img/button/downloadIcon.png' />
-                    </button>
+                            <div className={styles.itemInfo}>
+                                <img src={item.thumbnail} alt={item.title} className={styles.itemImg} />
+                                
+                                <span>{item.title}</span>
+                            </div>
+
+                            <a
+                                href={item.fileUrl}
+                                download
+                                className={styles.downloadBtn}
+                            >
+                                <img src='/src/assets/img/button/downloadIcon.png' alt='다운로드 아이콘' />
+                            </a>
+                        </li>
+                    ))}
                 </div>
 
             </div>
 
-            <div className={styles.btnArea}>
-                <Link to='/'>홈으로</Link>
-                <Link to='/mypage'>마이페이지로 가기</Link>
+            <div className={styles.btnGroup}>
+                <Link to='/' className={styles.homeBtn}>홈으로</Link>
+                <Link to='/mypage'  className={styles.mypageBtn}>마이페이지로 가기</Link>
             </div>
 
         </div>

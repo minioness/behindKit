@@ -1,24 +1,66 @@
+import { useNavigate } from "react-router-dom";
 import { formatPrice } from "../../utils/formatPrice";
 
-import { useRecoilValue } from "recoil";
+import { useRecoilState} from "recoil";
 import { cartState } from "../../recoil/cartAtom";
 
 import { useProducts } from "../../hooks/useProducts";
 
+import { db } from "../../firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
+
 import styles from './CartSummary.module.css'
-import { useNavigate } from "react-router-dom";
 
 export default function CartSummary() {
 
-    const cart = useRecoilValue(cartState);
+    const [cart, setCart] = useRecoilState(cartState);
+
     const { products } = useProducts();
     const navigate = useNavigate();
+
+
 
     const cartProducts = products.filter((p) => cart.includes(p.id));
 
     const totalPrice = cartProducts.reduce((sum, item) => sum + item.price, 0);
     const fee = Math.floor(totalPrice * 0.045); // 수수료 4.5%
     const finalPrice = totalPrice + fee;
+
+
+    const handlePayment = async () => {
+        if (cartProducts.length === 0) return;
+
+        const orderId = uuidv4();
+        const createdAt = new Date();
+
+        try {
+            await setDoc(doc(db, "orders", orderId),{
+                orderId,
+                createdAt,
+                totalPrice: finalPrice,
+                items: cartProducts.map((p) => ({
+                    id: p.id,
+                    title: p.title,
+                    price: p.price,
+                    thumbnail: p.thumbnail,
+                    fileUrl: p.fileUrl,
+                })),
+            });
+
+            setCart([]);
+
+            alert("결제가 완료되었습니다!");
+        
+            navigate(`/order-complete?orderId=${orderId}`);
+
+            
+
+        }  catch (error) {
+            console.error("주문 저장 실패:", error);
+        }
+    }
+
 
     return (
         <div className={styles.cartSummaryContainer}>
@@ -67,12 +109,7 @@ export default function CartSummary() {
                 <button
                     className={styles.payButton}
                     disabled={cart.length === 0}
-                    onClick={() => 
-                        {
-                            alert('결제가 완료되었습니다!');
-                            navigate('/order-complete');
-                        }
-                    }
+                    onClick={handlePayment}
                 >
                     {cart.length === 0 ? '상품을 담아주세요' : '결제하기'}
                 </button>

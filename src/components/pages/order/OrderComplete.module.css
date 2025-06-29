@@ -1,0 +1,133 @@
+.orderCompleteContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.completeArea {
+    background-color: #ccc;
+    width: 80%;
+    height: 370px;
+    padding: 30px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+}
+
+.completeArea p {
+    font-size: 40px;
+    font-weight: 500;
+    color: #464646;
+}
+
+.orderInfo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.orderNumber,
+.orderPrice {
+    display: flex;
+    font-size: 25px;
+    font-weight: 500;
+
+    color: #464646;
+
+    padding: 30px;
+
+    justify-content: space-between;
+    
+}
+
+.orderDownloadArea {
+    list-style: none;
+    padding: 30px;
+}
+
+.downloadItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemInfo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 20px;
+    color: #464646;
+}
+
+
+.itemImg {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 12px;
+}
+
+.downloadBtn {
+    cursor: pointer;
+}
+
+.downloadBtn img {
+    width: 50px;
+    height: 50px;
+}
+
+.homeBtn,
+.mypageBtn {
+    width: 345px;
+    height: 70px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btnGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    margin-bottom: 10px;
+}
+
+
+.homeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #464646;
+    border-radius: 20px;
+
+    color: #464646;
+    background-color: white;
+}
+
+.mypageBtn {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: none;
+    border-radius: 20px;
+
+    color: white;
+    background-color: #E35050;
+
+}
