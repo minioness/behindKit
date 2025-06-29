@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
-import styles from "./Nav.module.css";
+
 import type { User } from "firebase/auth";
 
+import { useRecoilState } from "recoil";
+import { cartState } from "../../recoil/cartAtom";
+
+import styles from "./Nav.module.css";
+
+
+
 export default function Nav({user}: { user: User | null }) {
-    const cartCount = 1;
+
+    const [cart, setcart] = useRecoilState(cartState);
+
+    const cartCount = cart.length
 
 
     return (
