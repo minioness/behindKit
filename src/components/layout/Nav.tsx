@@ -5,11 +5,12 @@ import { signOut, type User } from "firebase/auth";
 import { auth } from "../../firebase";
 
 
-import { useRecoilState } from "recoil";
+import { useRecoilState, useResetRecoilState } from "recoil";
 import { cartState } from "../../recoil/cartAtom";
 
 import styles from "./Nav.module.css";
 import cx from 'clsx';
+import { wishlistState } from "../../recoil/wishlistAtom";
 
 
 
@@ -18,6 +19,9 @@ export default function Nav({user}: { user: User | null }) {
     const [cart, ] = useRecoilState(cartState);
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
+
+    const resetCart = useResetRecoilState(cartState);
+    const resetWishlist = useResetRecoilState(wishlistState);
 
     const hamburgerRef = useRef<HTMLDivElement>(null);
 
@@ -33,13 +37,18 @@ export default function Nav({user}: { user: User | null }) {
         }
         };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
 
     const handleLogout = async() => {
         await signOut(auth);
+
+        // Recoil 상태 초기화
+        resetCart();
+        resetWishlist();    
+
         alert('로그아웃 되었습니다.');
         navigate('/login');
         setMenuOpen(false);

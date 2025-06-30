@@ -6,6 +6,10 @@ import { signOut } from 'firebase/auth';
 import { auth, db } from '../../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
+import { useResetRecoilState } from 'recoil';
+import { wishlistState } from '../../../recoil/wishlistAtom';
+import { cartState } from '../../../recoil/cartAtom';
+
 import styles from './MyPage.module.css'
 
 
@@ -17,6 +21,9 @@ export default function MyPage({ user }: MyPageProps) {
 
   const [nickName, setNickName] = useState('');
   const [loading, setLoading] = useState(true); 
+
+  const resetCart = useResetRecoilState(cartState);
+  const resetWishlist = useResetRecoilState(wishlistState);
   
   const navigate = useNavigate();
   
@@ -52,6 +59,11 @@ export default function MyPage({ user }: MyPageProps) {
   const handleLogout = async() => {
     try {
       await signOut(auth);
+
+      // Recoil 상태 초기화
+      resetCart();
+      resetWishlist();      
+
       alert('로그아웃 되었습니다.');
       navigate('/login');
     } catch (error) {
