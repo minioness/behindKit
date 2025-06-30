@@ -1,47 +1,38 @@
-
-
 import { Link } from 'react-router-dom';
-import { useProducts } from '../../../hooks/useProducts';
 import { formatPrice } from '../../../utils/formatPrice';
 
-import { useRecoilState } from 'recoil';
-import { wishlistState } from '../../../recoil/wishlistAtom';
+import { useProducts } from '../../../hooks/useProducts';
+import { useWishList } from '../../../hooks/useWishList';
+import { useCart } from '../../../hooks/useCart';
 
 import styles from './WishListPage.module.css'
-import { useCart } from '../../../hooks/useCart';
+
 
 
 export default function WishListPage() {
-  const [ wishlist, setWishlist ] = useRecoilState(wishlistState);
   const { products } = useProducts();
-  
 
-  const wishProducts = products.filter((p) => wishlist.includes(p.id));
-
+  const { wishlist, removeFromWishlist } = useWishList();
   const { addToCart } = useCart();
   
-
-  const handleRemove = (productId: number) => {
-    setWishlist((prev) => prev.filter((id) => id !== productId));
-  }
+  const wishProducts = products.filter((p) => wishlist.includes(p.id));
 
 
-  
 
-  if (wishProducts.length === 0) return(
+  if (wishProducts.length === 0) 
+    return (
+      <div className={styles.wishListPageContainer}>
+        <div className={styles.title}>
+          <h1>위시리스트</h1>
+        </div>
 
-    <div className={styles.wishListPageContainer}>
-      <div className={styles.title}>
-        <h1>위시리스트</h1>
+        <div className={styles.wishCommentWrapper}>
+            <p className={styles.wishlistComment}>위시리트스에 담긴 상품이 없습니다</p>
+
+            <Link to='/'>상품 담으러 가기</Link>
+        </div>
+
       </div>
-
-      <div className={styles.wishCommentWrapper}>
-          <p className={styles.wishlistComment}>위시리트스에 담긴 상품이 없습니다</p>
-
-          <Link to='/'>상품 담으러 가기</Link>
-      </div>
-
-    </div>
   )
 
 
@@ -69,7 +60,7 @@ export default function WishListPage() {
             </div>
 
             <div className={styles.buttonArea}>
-              <button className={styles.deleteBtn} onClick={() => handleRemove(product.id)}>
+              <button className={styles.deleteBtn} onClick={() => removeFromWishlist(product.id)}>
                 삭제
               </button>
 

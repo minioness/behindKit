@@ -1,35 +1,35 @@
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import { useProducts } from '../../hooks/useProducts';
 import { formatPrice } from '../../utils/formatPrice';
 
-import { useRecoilState } from 'recoil';
+import { useProducts } from '../../hooks/useProducts';
+import { useCart } from '../../hooks/useCart';
+import { useWishList } from '../../hooks/useWishList';
 
 import styles from './ProductDetailGrid.module.css';
-import { wishlistState } from '../../recoil/wishlistAtom';
-import { useCart } from '../../hooks/useCart';
-
 
 
 export default function ProductDetailGrid() {
 
     const { id } = useParams();
     const { products } = useProducts();
+    const { addToCart } = useCart();
+    const { wishlist, addToWishlist, removeFromWishlist} = useWishList();
+    
     const product = products.find((p) => p.id === Number(id));
 
-    const [wishlist, setWishlist] = useRecoilState(wishlistState);
     const isWished =  product ? wishlist.includes(product.id) : false;
+    
 
     const handleToggleWishlist = (productId: number) => {
-        setWishlist((prev) =>
-            prev.includes(productId)
-            ? prev.filter((id) => id !== productId)
-            : [...prev, productId]
-        );
+        if (wishlist.includes(productId)) {
+            removeFromWishlist(productId);
+        } else {
+            addToWishlist(productId);
+        }
     };
 
-     const { addToCart } = useCart();
 
 
     if (!product) return <p>상품을 찾을 수 없습니다.</p>;
