@@ -8,6 +8,7 @@ import { useRecoilState } from 'recoil';
 
 import styles from './ProductDetailGrid.module.css';
 import { wishlistState } from '../../recoil/wishlistAtom';
+import { useCart } from '../../hooks/useCart';
 
 
 
@@ -27,6 +28,8 @@ export default function ProductDetailGrid() {
             : [...prev, productId]
         );
     };
+
+     const { addToCart } = useCart();
 
 
     if (!product) return <p>상품을 찾을 수 없습니다.</p>;
@@ -60,7 +63,7 @@ export default function ProductDetailGrid() {
                         />
                     </button>
 
-                    <button className={styles.cartBtn}> 장바구니 담기</button>
+                    <button className={styles.cartBtn} onClick={() => addToCart(product.id)}> 장바구니 담기</button>
                     <Link to='/cart' className={styles.cartMoveBtn}>장바구니 이동</Link>
                 </div>
 

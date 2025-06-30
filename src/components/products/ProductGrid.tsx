@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { useRecoilState } from 'recoil';
 import { wishlistState } from '../../recoil/wishlistAtom';
-import { cartState } from '../../recoil/cartAtom';
+
+import { useCart } from '../../hooks/useCart';
 
 import styles from './ProductGrid.module.css';
 
@@ -22,7 +23,7 @@ interface ProductGridProps {
 
 export default function ProductGrid({ products }: ProductGridProps) {
   const [wishlist, setWishlist] = useRecoilState(wishlistState);
-  const [cart, setCart] = useRecoilState(cartState);
+
 
   const handleToggleWishlist = (productId: number) => {
     setWishlist((prev) =>
@@ -32,15 +33,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
     );
   };
 
-  const handleCartAdd = (productId: number) => {
-    if (cart.includes(productId)) {
-      alert('이미 장바구니에 담긴 상품입니다.');
-      return;
-    }
-
-    setCart([...cart, productId]);
-    alert('장바구니에 담겼습니다!');
-  };
+  const { addToCart } = useCart();
 
   return (
     <div>
@@ -75,7 +68,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
 
               <button
                 className={styles.cartArea}
-                onClick={() => handleCartAdd(product.id)}
+                onClick={() => addToCart(product.id)}
               >
                 <img src="/src/assets/img/button/cartBtn.svg" />
                 담기

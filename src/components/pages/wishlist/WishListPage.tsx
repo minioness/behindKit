@@ -5,36 +5,26 @@ import { useProducts } from '../../../hooks/useProducts';
 import { formatPrice } from '../../../utils/formatPrice';
 
 import { useRecoilState } from 'recoil';
-import { cartState } from '../../../recoil/cartAtom';
 import { wishlistState } from '../../../recoil/wishlistAtom';
 
 import styles from './WishListPage.module.css'
+import { useCart } from '../../../hooks/useCart';
 
 
 export default function WishListPage() {
   const [ wishlist, setWishlist ] = useRecoilState(wishlistState);
-  const [ , setCart ] = useRecoilState(cartState);
   const { products } = useProducts();
+  
 
   const wishProducts = products.filter((p) => wishlist.includes(p.id));
+
+  const { addToCart } = useCart();
+  
 
   const handleRemove = (productId: number) => {
     setWishlist((prev) => prev.filter((id) => id !== productId));
   }
 
-  const handleCartAdd = (productId: number) => {
-    setCart((prev) => {
-      // 이미 장바구니에 있는 경우
-      if (prev.includes(productId)) {
-        alert('이미 장바구니에 담긴 상품입니다.');
-        return prev;
-      } else {
-        // 장바구니에 없는 경우 추가
-        alert('장바구니에 담겼습니다!');
-        return [...prev, productId];
-      }
-    });
-  };
 
   
 
@@ -83,7 +73,7 @@ export default function WishListPage() {
                 삭제
               </button>
 
-              <button className={styles.cartBtn} onClick={() => handleCartAdd(product.id)}>
+              <button className={styles.cartBtn} onClick={() => addToCart(product.id)}>
                 장바구니 담기
               </button>
             </div>

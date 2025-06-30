@@ -1,7 +1,5 @@
-import { useRecoilState } from 'recoil';
-import { cartState } from '../../recoil/cartAtom';
-
 import { useProducts } from '../../hooks/useProducts';
+import { useCart } from '../../hooks/useCart';
 
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../../utils/formatPrice';
@@ -11,23 +9,20 @@ import styles from './CartList.module.css';
 
 export default function CartPage() {
 
-    const [cart, setCart] = useRecoilState(cartState);
-    const { products } = useProducts();
-    
-    const cartProducts = products.filter((p) => cart.includes(p.id));
+  const { cart, removeFromCart } = useCart();
+  const { products } = useProducts();
+  
+  const cartProducts = products.filter((p) => cart.includes(p.id));
 
 
-    const handleRemove = (productId: number) => {
-        setCart((prev) => prev.filter((id) => id !== productId));
-    }
 
-    if(cartProducts.length === 0) return (
+  if(cartProducts.length === 0) return (
 
-      <div className={styles.cartCommentWrapper}>
-        <p className={styles.cartComment}>장바구니에 담긴 상품이 없습니다</p>
-        <Link to='/'>상품 담으러 가기</Link>
-      </div>
-    )
+    <div className={styles.cartCommentWrapper}>
+      <p className={styles.cartComment}>장바구니에 담긴 상품이 없습니다</p>
+      <Link to='/'>상품 담으러 가기</Link>
+    </div>
+  )
 
 
   return (
@@ -48,7 +43,7 @@ export default function CartPage() {
 
             </div>
 
-            <button className={styles.deleteBtn} onClick={() => handleRemove(product.id)}>
+            <button className={styles.deleteBtn} onClick={() => removeFromCart(product.id)}>
                 삭제
             </button>
 
