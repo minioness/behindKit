@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 
 import type { User } from 'firebase/auth';
 import { signOut } from 'firebase/auth';
@@ -11,6 +11,9 @@ import { wishlistState } from '../../../recoil/wishlistAtom';
 import { cartState } from '../../../recoil/cartAtom';
 
 import styles from './MyPage.module.css'
+import Orders from '../order/Orders';
+import EditInfo from './editInfo';
+import MyKit from '../mykit/MyKit';
 
 
 interface MyPageProps {
@@ -77,6 +80,13 @@ export default function MyPage({ user }: MyPageProps) {
       <div className={styles.title}>
         <h1>마이페이지</h1>
       </div>
+      
+      <Routes>
+          <Route path="orders" element={<Orders user={user} />} />
+          <Route path="editinfo" element={<EditInfo user={user}/>} />
+          <Route path="mykit" element={<MyKit user={user}/>} />
+      </Routes>
+
 
       <div className={styles.userInfoWrapper}>
         <img src='/src/assets/img/profileImg.svg' alt='프로필 이미지' className={styles.profileImg} />
@@ -88,7 +98,7 @@ export default function MyPage({ user }: MyPageProps) {
           <div className={styles.userEmail}>이메일: {user?.email}</div>
         </div>
 
-        <Link to='/mypage/editinfo' className={styles.userChangeInfo}>
+        <Link to='editinfo' className={styles.userChangeInfo}>
           <img src='/src/assets/img/button/settingBtn.svg' alt='회원정보수정 버튼' />
         </Link>
       </div>
@@ -96,10 +106,10 @@ export default function MyPage({ user }: MyPageProps) {
 
       <div className={styles.buttonArea}>
         <Link to='/wishlist'>위시리스트</Link>
-        <Link to='/mypage/orders'>구매 내역</Link>
+        <Link to='orders'>구매 내역</Link>
       </div>
 
-      <Link to='/mykit' className={styles.mykitBtn}>My Kit 보기</Link>
+      <Link to='mykit' className={styles.mykitBtn}>My Kit 보기</Link>
 
 
       <button onClick={handleLogout} className={styles.logoutBtn}>로그아웃</button>

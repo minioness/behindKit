@@ -72,7 +72,7 @@ export default function Nav({user}: { user: User | null }) {
                         <img src="/src/assets/img/button/cartBtn.svg" alt="장바구니"/>
                         { cartCount > 0 && <span className={styles.cartBadge}>{cartCount}</span>}
                     </Link>
-                    <Link to={user? '/mypage' : '/login'} className={styles.myPageBtn}>
+                    <Link to='/mypage' className={styles.myPageBtn}>
                         <img src="/src/assets/img/button/myPageBtn.svg" alt="마이페이지"/>
                     </Link>
 

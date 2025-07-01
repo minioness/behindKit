@@ -1,5 +1,5 @@
 import { memo, type JSX } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import type { User } from "firebase/auth";
 
 import Home from "../components/pages/Home";
@@ -29,12 +29,13 @@ const Router = ({ user }: RouterProps): JSX.Element => {
       <Route path="/product/:id" element={<ProductDetailGrid />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/mypage" element={<MyPage user={user}/>} />
-      <Route path="/mypage/editinfo" element={<EditInfo user={user}/>} />
+
+      <Route path="/mypage/*" element={
+        user ? <MyPage user={user} /> : <Navigate to="/login" replace />
+      }  />
+
       <Route path="/wishlist" element={<WishListPage />} />
-      <Route path="/mypage/orders" element={<Orders user={user} />} />
       <Route path="/order-complete" element={<OrderComplete />} />
-      <Route path="/mypage/mykit" element={<MyKit />} />
       <Route path="/cart" element={<CartPage user={user} />} />
       
     </Routes>

@@ -12,7 +12,7 @@ import styles from './OrderComplete.module.css';
 interface Order {
   userId: string;
   orderId: string;
-  createdAt: Timestamp | Date;
+  createdAt: Timestamp;
   totalPrice: number;
   items: {
     id: number;
