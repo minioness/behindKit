@@ -32,10 +32,10 @@ const Router = ({ user }: RouterProps): JSX.Element => {
       <Route path="/mypage" element={<MyPage user={user}/>} />
       <Route path="/mypage/editinfo" element={<EditInfo user={user}/>} />
       <Route path="/wishlist" element={<WishListPage />} />
-      <Route path="/mypage/orders" element={<Orders />} />
+      <Route path="/mypage/orders" element={<Orders user={user} />} />
       <Route path="/order-complete" element={<OrderComplete />} />
       <Route path="/mypage/mykit" element={<MyKit />} />
-      <Route path="/cart" element={<CartPage />} />
+      <Route path="/cart" element={<CartPage user={user} />} />
       
     </Routes>
   );

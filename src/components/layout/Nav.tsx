@@ -84,7 +84,7 @@ export default function Nav({user}: { user: User | null }) {
 
                         <div className={cx(styles.hamburgerArea, { [styles.active]: menuOpen })}>
                             <Link to={'/mypage'} onClick={() => setMenuOpen(false)} className={styles.mypageMove}>마이페이지</Link>
-                            <Link to={'/mypage/orders'} onClick={() => setMenuOpen(false)} className={styles.orderMove}>주문 내역</Link>
+                            <Link to={'/mypage/orders'} onClick={() => setMenuOpen(false)} className={styles.orderMove}>구매 내역</Link>
                             <Link to={'/wishlist'} onClick={() => setMenuOpen(false)} className={styles.wishlistMove}>위시리스트</Link>
                             <Link to={'/cart'} onClick={() => setMenuOpen(false)} className={styles.cartMove}>장바구니</Link>
                             <button onClick={handleLogout} className={styles.logoutBtn} >로그아웃</button>

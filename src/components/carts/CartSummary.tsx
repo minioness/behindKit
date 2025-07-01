@@ -7,12 +7,20 @@ import { cartState } from "../../recoil/cartAtom";
 import { useProducts } from "../../hooks/useProducts";
 
 import { db } from "../../firebase";
+import type { User } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+
 import { v4 as uuidv4 } from "uuid";
 
 import styles from './CartSummary.module.css'
 
-export default function CartSummary() {
+
+interface RouterProps {
+  user: User | null;
+}
+
+
+export default function CartSummary({user}: RouterProps) {
 
     const [cart, setCart] = useRecoilState(cartState);
 
@@ -29,6 +37,12 @@ export default function CartSummary() {
 
 
     const handlePayment = async () => {
+        if (!user) {
+            alert('로그인이 필요합니다!');
+            navigate('/login');
+            return;
+        }
+
         if (cartProducts.length === 0) return;
 
         const orderId = uuidv4();
@@ -36,6 +50,7 @@ export default function CartSummary() {
 
         try {
             await setDoc(doc(db, "orders", orderId),{
+                userId: user.uid,
                 orderId,
                 createdAt,
                 totalPrice: finalPrice,
@@ -43,6 +58,7 @@ export default function CartSummary() {
                     id: p.id,
                     title: p.title,
                     price: p.price,
+                    category: p.category,
                     thumbnail: p.thumbnail,
                     fileUrl: p.fileUrl,
                 })),

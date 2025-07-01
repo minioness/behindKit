@@ -1,10 +1,15 @@
+import type { User } from 'firebase/auth';
 import CartList from '../../carts/CartList'
 import CartSummary from '../../carts/CartSummary';
 
 import styles from './CartPage.module.css';
 
 
-export default function CartPage() {
+interface RouterProps {
+  user: User | null;
+}
+
+export default function CartPage({ user }: RouterProps) {
   return (
     <div className={styles.cartPageContainer}>
       <div className={styles.title}>
@@ -17,7 +22,7 @@ export default function CartPage() {
         </div>
 
         <div className={styles.right}>
-          <CartSummary />
+          <CartSummary user={user} />
         </div>
       </div>
 

@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../../../firebase';
 
-import styles from './OrderComplete.module.css';
 import { formatPrice } from '../../../utils/formatPrice';
+
+import styles from './OrderComplete.module.css';
 
 
 interface Order {
+  userId: string;
   orderId: string;
-  createdAt: any;
+  createdAt: Timestamp | Date;
   totalPrice: number;
   items: {
     id: number;
