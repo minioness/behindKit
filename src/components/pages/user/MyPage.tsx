@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 
 import type { User } from 'firebase/auth';
 import { signOut } from 'firebase/auth';
@@ -81,12 +81,6 @@ export default function MyPage({ user }: MyPageProps) {
         <h1>마이페이지</h1>
       </div>
       
-      <Routes>
-          <Route path="orders" element={<Orders user={user} />} />
-          <Route path="editinfo" element={<EditInfo user={user}/>} />
-          <Route path="mykit" element={<MyKit user={user}/>} />
-      </Routes>
-
 
       <div className={styles.userInfoWrapper}>
         <img src='/src/assets/img/profileImg.svg' alt='프로필 이미지' className={styles.profileImg} />

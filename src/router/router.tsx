@@ -30,9 +30,25 @@ const Router = ({ user }: RouterProps): JSX.Element => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
 
-      <Route path="/mypage/*" element={
-        user ? <MyPage user={user} /> : <Navigate to="/login" replace />
-      }  />
+      <Route 
+        path="/mypage" 
+        element={user ? <MyPage user={user} /> : <Navigate to="/login" replace />} 
+      />
+
+      <Route
+        path="/mypage/orders"
+        element={user ? <Orders user={user} /> : <Navigate to="/login" replace />}
+      />
+
+      <Route
+        path="/mypage/mykit"
+        element={user ? <MyKit user={user} /> : <Navigate to="/login" replace />}
+      />
+
+      <Route
+        path="/mypage/editinfo"
+        element={user ? <EditInfo user={user} /> : <Navigate to="/login" replace />}
+      />
 
       <Route path="/wishlist" element={<WishListPage />} />
       <Route path="/order-complete" element={<OrderComplete />} />
