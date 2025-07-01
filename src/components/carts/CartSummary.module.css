@@ -79,7 +79,7 @@
     
     border-radius: 12px;
     
-    padding: 0 10px;
+    padding: 10px;
     margin-bottom: 20px;
 
 }
@@ -91,13 +91,15 @@
   cursor: pointer;
 
   font-size: 15px;
-  list-style: none;
+
 }
 
 
 .dropdownBox p {
   font-size: 13px;
   color: #aaaaaa;
+  padding-left: 30px;
+  padding-bottom: 15px;
 }
 
 
