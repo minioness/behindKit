@@ -9,7 +9,7 @@ import { EmailAuthProvider } from 'firebase/auth/web-extension';
 
 
 interface RouterProps {
-  user: User | null;
+  user: User;
 }
 
 export default function EditInfo({user}: RouterProps ) {

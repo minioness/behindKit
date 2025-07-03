@@ -49,9 +49,13 @@ const Router = ({ user }: RouterProps): JSX.Element => {
         path="/mypage/editinfo"
         element={user ? <EditInfo user={user} /> : <Navigate to="/login" replace />}
       />
+      
+      <Route 
+        path="/order-complete" 
+        element={user ? <OrderComplete /> : <Navigate to="/login" replace />} 
+      />
 
       <Route path="/wishlist" element={<WishListPage />} />
-      <Route path="/order-complete" element={<OrderComplete />} />
       <Route path="/cart" element={<CartPage user={user} />} />
       
     </Routes>

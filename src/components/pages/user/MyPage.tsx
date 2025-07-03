@@ -13,7 +13,7 @@ import { cartState } from '../../../recoil/cartAtom';
 import styles from './MyPage.module.css'
 
 interface MyPageProps {
-  user: User | null;
+  user: User;
 }
 
 export default function MyPage({ user }: MyPageProps) {

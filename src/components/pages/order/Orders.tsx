@@ -9,7 +9,7 @@ import { useCart } from "../../../hooks/useCart";
 import { Link } from "react-router-dom";
 
 interface RouterProps {
-  user: User | null;
+  user: User;
 }
 
 interface Order {

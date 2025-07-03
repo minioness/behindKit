@@ -13,7 +13,7 @@ import styles from './MyKit.module.css'
 import KitEditModal from './KitEditModal';
 
 interface RouterProps {
-  user: User | null;
+  user: User;
 }
 
 
@@ -149,7 +149,7 @@ export default function MyKit( {user}:RouterProps ) {
 
       {isEditModalOpen && editingKit && (
         <KitEditModal
-          userId={user?.uid ?? ''}  
+          userId={user.uid}  
           kit={editingKit}
           onClose={() => setIsEditModalOpen(false)}
           onUpdated={fetchKits}      
