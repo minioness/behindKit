@@ -115,11 +115,19 @@ export default function Login() {
 
         // 닉네임 등록 페이지로 이동
         alert(`${user.displayName}님, 닉네임을 등록해주세요.`);
-        navigate('/mypage/changeinfo');
+        navigate('/mypage/editinfo');
 
       } else {
         // 기존 유저 → 마이페이지 이동
-        navigate('/mypage');
+        const userData = userDoc.data();
+        const nickname = userData.nickname;
+
+        if (!nickname || nickname.trim() === '') {
+          alert(`${user.displayName}님, 닉네임을 등록해주세요.`);
+          navigate('/mypage/editinfo');
+        } else {
+          navigate('/mypage');
+        }
       }
 
     } catch (error: any) {
