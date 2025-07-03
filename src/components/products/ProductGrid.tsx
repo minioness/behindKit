@@ -35,7 +35,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
   const { addToCart } = useCart();
 
   return (
-    <div>
+
       <div className={styles.grid}>
         {products.map((product) => {
           const isWished = wishlist.includes(product.id);
@@ -82,6 +82,6 @@ export default function ProductGrid({ products }: ProductGridProps) {
           );
         })}
       </div>
-    </div>
+
   );
 }
