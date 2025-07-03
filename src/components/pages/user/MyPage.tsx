@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import type { User } from 'firebase/auth';
 import { signOut } from 'firebase/auth';
@@ -11,10 +11,6 @@ import { wishlistState } from '../../../recoil/wishlistAtom';
 import { cartState } from '../../../recoil/cartAtom';
 
 import styles from './MyPage.module.css'
-import Orders from '../order/Orders';
-import EditInfo from './editInfo';
-import MyKit from '../mykit/MyKit';
-
 
 interface MyPageProps {
   user: User | null;
@@ -81,6 +77,7 @@ export default function MyPage({ user }: MyPageProps) {
         <h1>마이페이지</h1>
       </div>
       
+   
 
       <div className={styles.userInfoWrapper}>
         <img src='/src/assets/img/profileImg.svg' alt='프로필 이미지' className={styles.profileImg} />
@@ -109,5 +106,6 @@ export default function MyPage({ user }: MyPageProps) {
       <button onClick={handleLogout} className={styles.logoutBtn}>로그아웃</button>
 
     </div>
+
   );
 }
