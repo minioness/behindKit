@@ -19,6 +19,7 @@
     color: #464646;
 
     width: 80%;
+    max-width: 1500px;
 
     border-bottom: 1px solid #464646;
 }
@@ -28,6 +29,7 @@
     display: flex;
     align-items: stretch;
     width: 80%;
+    max-width: 1500px;
 
     gap: 40px;
 }
