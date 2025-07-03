@@ -61,10 +61,10 @@ export default function Orders( {user}:RouterProps ) {
         </div>
 
         <div className={styles.noOrdersWrapper}>
-            <p className={styles.orderComment}>구매 내역이 없습니다</p>
-            <Link to='/' className={styles.Btn}>
-                구매하러 가기
-            </Link>
+          <p className={styles.orderComment}>구매 내역이 없습니다</p>
+          <Link to='/' className={styles.Btn}>
+              구매하러 가기
+          </Link>
         </div>
         
       </div>

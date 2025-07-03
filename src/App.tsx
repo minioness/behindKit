@@ -6,18 +6,26 @@ import { useEffect, useState } from 'react';
 import { onAuthStateChanged, type User } from 'firebase/auth';
 import { auth } from './firebase';
 
+import LoadingSpinner from './components/common/LoadingSpinner';
+
 import './App.css'
 
 function App() {
   
   const [user, setUser] = useState<User | null>(null);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser)=> {
       setUser(currentUser);
+      setIsAuthLoading(false);
     });
     return () => unsubscribe();
   }, []);
+
+  if (isAuthLoading) {
+    return <LoadingSpinner />;
+  }
   
   return (
       <section className='layout'>
