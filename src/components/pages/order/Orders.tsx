@@ -86,8 +86,6 @@ export default function Orders( {user}:RouterProps ) {
             <span>주문번호: {order.orderId}</span>
           </div>
 
-          <hr className={styles.divider} />
-
           {order.items.map((item) => (
             <div className={styles.itemWrapper}>
               <div className={styles.items}>
