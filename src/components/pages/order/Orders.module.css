@@ -20,6 +20,7 @@
     color: #464646;
 
     width: 80%;
+    max-width: 1500px;
 
     border-bottom: 1px solid #464646;
 
@@ -29,6 +30,7 @@
 .ordersWrapper,
 .noOrdersWrapper {
     width: 80%;
+    max-width: 1500px;
 
     border: 1px solid #ccc;
     border-radius: 12px;

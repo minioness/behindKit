@@ -23,6 +23,7 @@
     color: #464646;
 
     width: 80%;
+    max-width: 1500px;
 
     border-bottom: 1px solid #464646;
 }
@@ -37,7 +38,8 @@
 }
 
 .createKitContainer {
-    width: 70%;
+    width: 90%;
+    max-width: 1500px;
     height: 300px;
     border: 1px solid #ccc;
     border-radius: 20px;

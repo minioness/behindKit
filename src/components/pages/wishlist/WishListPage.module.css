@@ -82,6 +82,7 @@
     padding: 30px;
 
     width: 80%;
+    max-width: 1500px;
     height: auto;
 
     border: 1px solid #ccc;
