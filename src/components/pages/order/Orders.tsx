@@ -97,10 +97,22 @@ export default function Orders( {user}:RouterProps ) {
                   <span className={styles.itemPrice}>{formatPrice(item.price)}</span>
                 </div>
               </div>
+
+              <div className={styles.btnGroup}>
+
+                <a
+                  href={item.fileUrl}
+                  download
+                  className={styles.downloadBtn}
+                >
+                  <img src='/src/assets/img/button/downloadIcon.png' alt='다운로드 아이콘' />
+                </a>
+
+                <button className={styles.cartBtn} onClick={() => addToCart(item.id)}>
+                  <img src='/src/assets/img/button/cartBtn.svg' />
+                </button>
+              </div>
   
-              <button className={styles.cartBtn} onClick={() => addToCart(item.id)}>
-                <img src='/src/assets/img/button/cartBtn.svg' />
-              </button>
             </div>
 
           ))}

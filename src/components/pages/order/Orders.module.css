@@ -93,6 +93,8 @@
 
     padding-left: 30px;
     padding-right: 30px;
+    
+    margin-bottom: 30px;
 }
 
 .orderInfo span:first-child {
@@ -155,6 +157,34 @@
 
 }
 
+.btnGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.downloadBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+    border-radius:15px;
+    border: 1px solid #ccc;
+}
+
+
+
+.downloadBtn img {
+    width: 50px;
+    height: 50px;
+
+}
+
 
 .cartBtn {
     display: flex;
@@ -174,7 +204,6 @@
     
     cursor: pointer;
 
-    /* margin-top: 40px; */
 }
 
 .cartBtn img {
