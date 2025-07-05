@@ -102,11 +102,7 @@
     color: #464646;
 }
 
-.mypageMove,
-.orderMove,
-.wishlistMove,
-.cartMove,
-.logoutBtn {
+.moveBtn {
     width: 100%;
     height: 50px;
 
@@ -115,11 +111,7 @@
 }
 
 
-.mypageMove:hover,
-.orderMove:hover,
-.wishlistMove:hover,
-.cartMove:hover,
-.logoutBtn:hover {
+.moveBtn:hover {
     background-color: #E35050;
     color: white;
     border-radius: 15px;
