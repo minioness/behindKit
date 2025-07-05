@@ -109,7 +109,7 @@ export default function Login() {
         await setDoc(userRef, {
           name: user.displayName,
           email: user.email,
-          nickname: '', // 처음에는 비워두고 이후에 등록하도록
+          nickName: '', // 처음에는 비워두고 이후에 등록하도록
           createdAt: new Date()
         });
 
@@ -120,9 +120,9 @@ export default function Login() {
       } else {
         // 기존 유저 → 마이페이지 이동
         const userData = userDoc.data();
-        const nickname = userData.nickname;
+        const nickName = userData.nickName;
 
-        if (!nickname || nickname.trim() === '') {
+        if (!nickName || nickName.trim() === '') {
           alert(`${user.displayName}님, 닉네임을 등록해주세요.`);
           navigate('/mypage/editinfo');
         } else {
