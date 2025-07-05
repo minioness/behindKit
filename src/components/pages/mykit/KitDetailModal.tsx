@@ -5,6 +5,7 @@ import { db } from "../../../firebase";
 
 import styles from './KitDetailModal.module.css'
 import { FiTrash2 } from "react-icons/fi";
+import AddTemplateModal from "./AddTemplateModal";
 
 interface KitDetailModalProps {
     kit: Kit; 
