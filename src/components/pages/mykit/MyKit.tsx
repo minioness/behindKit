@@ -132,7 +132,12 @@ export default function MyKit( {user}:RouterProps ) {
                 <h3>{kit.kitName}</h3>
                 <p>{kit.kitDescription}</p>
                 <div className={styles.btnGroup}>
-                  <button onClick={() => handleDelete(kit.id)} className={styles.deleteBtn}>
+                  <button onClick={(e) => {
+                    e.stopPropagation();
+                    handleDelete(kit.id)
+                  }}
+                   className={styles.deleteBtn}
+                  >
                     <FiTrash2 size={18} />
                   </button>
                 </div>
