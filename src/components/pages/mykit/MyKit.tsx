@@ -6,11 +6,12 @@ import { collection, deleteDoc, doc, getDocs, query, where } from 'firebase/fire
 import { db } from '../../../firebase';
 
 import KitCreateModal from './KitCreateModal';
+import KitDetailModal from './KitDetailModal';
 
-import { FiEdit2, FiTrash2 } from 'react-icons/fi';
+import { FiTrash2 } from 'react-icons/fi';
 
 import styles from './MyKit.module.css'
-import KitEditModal from './KitEditModal';
+
 
 interface RouterProps {
   user: User;
@@ -38,8 +39,8 @@ export default function MyKit( {user}:RouterProps ) {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [editingKit, setEditingKit] = useState<Kit | null>(null);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [DetailKit, setDetailKit] = useState<Kit | null>(null);
+  const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
 
 
   // kit 리스트 불러오는 함수
@@ -67,10 +68,6 @@ export default function MyKit( {user}:RouterProps ) {
 
 
 
-  const handleEdit = (kit: Kit) => {
-    setEditingKit(kit);
-    setIsEditModalOpen(true);
-  };
 
   const handleDelete = async (kitId: string) => {
     if (!confirm('정말 삭제할까요?')) return;
@@ -80,6 +77,8 @@ export default function MyKit( {user}:RouterProps ) {
     alert('삭제 완료!');
     fetchKits();
   };
+
+
 
 
   return (
@@ -106,14 +105,20 @@ export default function MyKit( {user}:RouterProps ) {
         </figure>
       </div>
 
-      <div className={styles.kitList}>
-        {loading ? (
-          <p>불러오는 중...</p>
-        ) : kits.length > 0 ? (
-          kits.map(kit => (
-            <div key={kit.id} className={styles.kitCard}>
+      {loading ? (
+        <p>불러오는 중...</p>
+      ) : kits.length > 0 ? (
+        <div className={styles.kitList}>
+          {kits.map(kit => (
+            <div 
+              key={kit.id} 
+              className={styles.kitCard}
+              onClick={() => {
+                setDetailKit(kit);
+                setIsDetailModalOpen(true);
+              }}
+            >
               {/* 썸네일 영역 */}
-        
               <div className={styles.thumbnailWrapper}>
                 {kit.templates.length > 0 ? (
                   <img src={kit.templates[0].thumbnail} alt={kit.kitName} />
@@ -122,22 +127,26 @@ export default function MyKit( {user}:RouterProps ) {
                 )}
               </div>
 
-
               {/* Kit 정보 */}
               <div className={styles.kitInfo}>
                 <h3>{kit.kitName}</h3>
                 <p>{kit.kitDescription}</p>
                 <div className={styles.btnGroup}>
-                  <button onClick={() => handleEdit(kit)} className={styles.editBtn}><FiEdit2 size={18} /></button>
-                  <button onClick={() => handleDelete(kit.id)} className={styles.deleteBtn}><FiTrash2 size={18} /></button>
+                  <button onClick={() => handleDelete(kit.id)} className={styles.deleteBtn}>
+                    <FiTrash2 size={18} />
+                  </button>
                 </div>
               </div>
             </div>
-          ))
-        ) : (
-            <p className={styles.empty}>아직 만든 키트가 없어요</p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className={styles.empty}>
+          <img src='/src/assets/img/myKitEmpty.png' alt='빈 키트 이미지'/>
+          <p>아직 만든 키트가 없어요</p>
+
+        </div>
+      )}
 
       {isModalOpen && user && (
         <KitCreateModal
@@ -147,15 +156,14 @@ export default function MyKit( {user}:RouterProps ) {
         />
       )}
 
-      {isEditModalOpen && editingKit && (
-        <KitEditModal
+      {isDetailModalOpen && DetailKit && (
+        <KitDetailModal
           userId={user.uid}  
-          kit={editingKit}
-          onClose={() => setIsEditModalOpen(false)}
+          kit={DetailKit}
+          onClose={() => setIsDetailModalOpen(false)}
           onUpdated={fetchKits}      
         />
       )}
     </div>
-
   );
 }
