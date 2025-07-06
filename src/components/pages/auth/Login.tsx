@@ -146,25 +146,25 @@ export default function Login() {
         <form onSubmit={handleLogin} className={styles.loginArea}>
           <div className={styles.inputId}>
             <p>이메일</p>
-            <input 
-              type='text'
-              placeholder='이메일을 입력해주세요'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={styles.inputField}
-            />
           </div>
+          <input 
+            type='text'
+            placeholder='이메일을 입력해주세요'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={styles.inputField}
+          />
 
           <div className={styles.inputPwd}>
             <p>비밀번호</p>
-            <input 
-              type='password'
-              placeholder='비밀번호를 입력해주세요.'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={styles.inputField}
-            />
           </div>
+          <input 
+            type='password'
+            placeholder='비밀번호를 입력해주세요.'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles.inputField}
+          />
 
           <button className={styles.loginBtn}>로그인</button>
         </form>

@@ -1,18 +1,21 @@
 .loginContainer {
     width: 100%;
+    min-height: 100vh;
+    padding-top: 0; 
     background-color: transparent;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 80px;
+
 
 }
 
 .loginWrapper {
-    width: 590px;
-    height: 590px;
+    width: 100%;           
+    max-width: 590px;
+    height: auto; 
     background-color: white;
 
     border-radius: 20%;
@@ -22,30 +25,43 @@
     justify-content: center;
     align-items: center;
 
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    padding: 50px 30px;
+    margin-bottom: 10px;
 }
 
 .title {
     font-size: 25px;
+    padding-bottom: 25px;
 }
 
 .title h2 {
     margin: 0;
 }
 
+.loginArea {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .inputId,
 .inputPwd {
     font-size: 15px;
-}
+    width: 100%;
 
-.inputId p,
-.inputPwd p {
+    padding-left: 50px;
     margin-bottom: 5px;
 }
 
-.inputId input,
-.inputPwd input {
-    width: 430px;
+
+.inputField {
+    width: 100%;
+    max-width: 430px;
+
     height: 60px;
     font-size: 15px;
 
@@ -54,6 +70,8 @@
     outline: none;
     border: 1px solid #BABABA;
     border-radius: 10px;
+
+    margin-bottom: 15px;
 }
 
 .inputField:focus {
@@ -62,7 +80,8 @@
 
 
 .loginBtn {
-    width: 430px;
+    width: 100%;
+    max-width: 430px;
     height: 60px;
     margin-top: 30px;
     
@@ -90,7 +109,8 @@
 
 
 .GoogleLoginBtn {
-    width: 430px;
+    width: 100%;
+    max-width: 430px;
     height: 60px;
     padding: 12px 25px;
 
@@ -113,8 +133,7 @@
 
 .notLogin {
     display: flex;
-    gap: 40px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 
@@ -122,6 +141,7 @@
     border: none;
     background-color: transparent;
     font-size: 15px;
+    padding-right: 40px;
 }
 
 
@@ -129,4 +149,149 @@
     text-decoration: none;
     color: black;
     font-size: 15px;
+}
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .loginContainer {
+        min-height: 75vh;
+    }
+    .loginWrapper {
+        border-radius: 10%;
+        box-shadow: none;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+
+    .inputId,
+    .inputPwd {
+        font-size: 13px;
+        padding-left: 0;
+    }
+
+    .inputField {
+        height: 45px;
+        font-size: 13px;
+    }
+
+    .loginBtn {
+        height: 45px;
+        font-size: 13px;
+    }
+
+    .GoogleLoginBtn {
+        height: 45px;
+        font-size: 13px;
+        gap: 65px;
+    }
+
+    .GoogleLoginBtn img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .notLogin button {
+        font-size: 13px;
+        padding-right: 40px;
+    }
+
+
+    .notLogin a {
+        font-size: 13px;
+    }
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+  .loginWrapper {
+    max-width: 650px;
+    box-shadow: none;
+  }
+  .inputId,
+  .inputPwd {
+    font-size: 15px;
+    padding-left: 80px;
+  }
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+  .loginWrapper {
+    max-width: 750px;
+    box-shadow: none;
+  }
+  .inputId,
+  .inputPwd {
+    font-size: 17px;
+    padding-left: 100px;
+  }
+
+  .inputField {
+    font-size: 17px;
+    max-width: 500px;
+  }
+
+  .GoogleLoginBtn {
+    max-width: 500px;
+    gap: 145px;
+  }
+
+  .GoogleLoginBtn p {
+    font-size: 17px;
+  }
+
+  .loginBtn {
+    max-width: 500px;
+    font-size: 17px;
+  }
+
+  .notLogin button,
+  .notLogin a {
+        font-size: 17px;
+    }
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .title {
+    font-size: 30px;
+  }
+  .loginWrapper {
+    max-width: 800px;
+    box-shadow: none;
+  }
+  .inputId,
+  .inputPwd {
+    font-size: 20px;
+    padding-left: 80px;
+  }
+
+  .inputField {
+    max-width: 600px;
+    font-size: 20px;
+  }
+  .GoogleLoginBtn {
+    max-width: 600px;
+    gap: 190px;
+    font-size: 20px;
+  }
+
+  .loginBtn {
+    max-width: 600px;
+    font-size: 20px;
+  }
+
+  .notLogin button,
+  .notLogin a {
+        font-size: 20px;
+    }
+
+  
 }
