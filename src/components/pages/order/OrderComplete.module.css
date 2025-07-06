@@ -1,7 +1,7 @@
 .orderCompleteContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
+    padding-top: 120px;
 }
 
 .completeArea {
@@ -131,5 +131,323 @@
 
     color: white;
     background-color: #E35050;
+
+}
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .orderCompleteContainer {
+        gap: 5px;
+    }
+
+    .completeArea {
+        height: auto;
+        padding: 20px;
+
+    }
+
+    .completeArea figure img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .completeArea p {
+        font-size: 15px;
+
+    }
+
+    .orderNumber {
+        margin-top: 10px;
+    }
+
+    .orderNumber,
+    .orderPrice {
+        font-size: 10px;
+        font-weight: 500;
+
+        color: #464646;
+
+        padding: 5px;
+
+    }
+
+    .orderDownloadArea {
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+
+    .itemInfo {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .itemInfo span {
+        font-size: 10px;
+    }
+
+
+    .itemImg {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .downloadBtn img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .homeBtn,
+    .mypageBtn {
+        width: 90px;
+        height: 30px;
+
+        font-size: 12px;
+        border-radius: 12px;
+    }
+
+    .btnGroup {
+        gap: 20px;
+    }
+
+
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .orderCompleteContainer {
+        gap: 15px;
+        padding-top: 50px;
+    }
+
+    .completeArea {
+        height: auto;
+        padding: 20px;
+
+    }
+
+    .completeArea figure img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .completeArea p {
+        font-size: 18px;
+
+    }
+
+    .orderNumber {
+        margin-top: 10px;
+    }
+
+    .orderNumber,
+    .orderPrice {
+        font-size: 14px;
+        font-weight: 500;
+
+        color: #464646;
+
+        padding: 5px;
+
+    }
+
+    .orderDownloadArea {
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+
+    .itemInfo {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .itemInfo span {
+        font-size: 14px;
+    }
+
+
+    .itemImg {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .downloadBtn img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .homeBtn,
+    .mypageBtn {
+        width: 110px;
+        height: 40px;
+
+        font-size: 13px;
+        border-radius: 12px;
+    }
+
+    .btnGroup {
+        gap: 20px;
+    }
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .orderCompleteContainer {
+        gap: 15px;
+        padding-top: 50px;
+    }
+
+    .completeArea {
+        height: auto;
+        padding: 20px;
+
+    }
+
+    .completeArea figure img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .completeArea p {
+        font-size: 20px;
+
+    }
+
+    .orderNumber {
+        margin-top: 10px;
+    }
+
+    .orderNumber,
+    .orderPrice {
+        font-size: 17px;
+
+        padding: 5px;
+
+    }
+
+    .orderDownloadArea {
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+
+    .itemInfo {
+        gap: 10px;
+        font-size: 17px;
+    }
+
+    .itemInfo span {
+        font-size: 17px;
+    }
+
+
+    .itemImg {
+        width: 70px;
+        height: 70px;
+    }
+
+
+    .downloadBtn img {
+        width: 29px;
+        height: 29px;
+    }
+
+    .homeBtn,
+    .mypageBtn {
+        width: 120px;
+        height: 45px;
+
+        font-size: 15px;
+
+    }
+
+    .btnGroup {
+        gap: 20px;
+    }
+
+
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+ 
+    .orderCompleteContainer {
+        gap: 20px;
+        padding-top: 50px;
+    }
+    
+    .completeArea {
+        height: auto;
+        padding: 20px;
+
+    }
+
+    .completeArea figure img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .completeArea p {
+        font-size: 25px;
+
+    }
+
+    .orderNumber {
+        margin-top: 10px;
+    }
+
+    .orderNumber,
+    .orderPrice {
+        font-size: 20px;
+
+        padding: 5px;
+
+    }
+
+    .orderDownloadArea {
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+
+    .itemInfo {
+        gap: 10px;
+        font-size: 20px;
+    }
+
+    .itemInfo span {
+        font-size: 20px;
+    }
+
+
+    .itemImg {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .downloadBtn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .homeBtn,
+    .mypageBtn {
+        width: 140px;
+        height: 50px;
+
+        font-size: 17px;
+
+    }
+
+    .btnGroup {
+        gap: 20px;
+    }
 
 }

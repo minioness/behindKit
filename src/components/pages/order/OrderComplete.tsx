@@ -96,7 +96,7 @@ export default function OrderComplete() {
 
             <div className={styles.btnGroup}>
                 <Link to='/' className={styles.homeBtn}>홈으로</Link>
-                <Link to='/mypage'  className={styles.mypageBtn}>마이페이지로 가기</Link>
+                <Link to='/mypage'  className={styles.mypageBtn}>마이페이지</Link>
             </div>
 
         </div>
