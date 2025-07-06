@@ -45,29 +45,34 @@ export default function WishListPage() {
       <ul className={styles.wishListWrapper}>
         {wishProducts.map((product) => (
 
-          <li key={product.id}>
+          <li key={product.id} className={styles.productList}>
             <div className={styles.productInfo}>
               <Link to={`/product/${product.id}`}>
                 <img src={product.thumbnail} alt={product.title} className={styles.productImg}/>
               </Link>
 
+            </div>
+
+            <div className={styles.wrapper}>
               <div className={styles.info}>
                 <h3 className={styles.productTitle}>{product.title}</h3>
                 <p className={styles.category}>{product.category}</p>
                 <p className={styles.price}>{formatPrice(product.price)}</p>
               </div>
 
+
+              <div className={styles.buttonArea}>
+                <button className={styles.deleteBtn} onClick={() => removeFromWishlist(product.id)}>
+                  삭제
+                </button>
+
+                <button className={styles.cartBtn} onClick={() => addToCart(product.id)}>
+                  장바구니 담기
+                </button>
+              </div>
+
             </div>
 
-            <div className={styles.buttonArea}>
-              <button className={styles.deleteBtn} onClick={() => removeFromWishlist(product.id)}>
-                삭제
-              </button>
-
-              <button className={styles.cartBtn} onClick={() => addToCart(product.id)}>
-                장바구니 담기
-              </button>
-            </div>
           </li>
 
         ))}

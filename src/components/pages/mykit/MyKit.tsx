@@ -138,7 +138,7 @@ export default function MyKit( {user}:RouterProps ) {
                   }}
                    className={styles.deleteBtn}
                   >
-                    <FiTrash2 size={18} />
+                    <FiTrash2 size={18}  className={styles.trashIcon}/>
                   </button>
                 </div>
               </div>

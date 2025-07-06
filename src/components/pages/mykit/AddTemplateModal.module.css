@@ -104,3 +104,143 @@
     color: white;
     background-color: #E35050;
 }
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .modalContent {
+        padding: 40px;
+    }
+    .modalContent h2 {
+        font-size: 20px;
+    }
+
+    .checkboxItem {
+        font-size: 15px;
+    }
+
+
+    .checkboxItem input {
+        width: 20px;
+        height: 20px;
+    }
+
+    .checkboxItem img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    .closeBtn,
+    .AddBtn {
+        width: 120px;
+        height: 40px;
+
+        font-size: 12px;
+
+    }
+
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+
+    .modalContent h2 {
+        font-size: 25px;
+    }
+
+    .checkboxItem {
+        font-size: 18px;
+    }
+
+
+    .checkboxItem input {
+        width: 20px;
+        height: 20px;
+    }
+
+    .checkboxItem img {
+        width: 70px;
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    .closeBtn,
+    .AddBtn {
+        width: 140px;
+        height: 45px;
+
+        font-size: 15px;
+
+    }
+
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .modalContent h2 {
+        font-size: 27px;
+    }
+
+    .checkboxItem {
+        font-size: 20px;
+    }
+
+
+    .checkboxItem input {
+        width: 22px;
+        height: 22px;
+    }
+
+    .checkboxItem img {
+        width: 75px;
+        height: 75px;
+        margin-right: 10px;
+    }
+
+    .closeBtn,
+    .AddBtn {
+        width: 145px;
+        height: 47px;
+
+        font-size: 17px;
+
+    }
+
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+ 
+    .modalContent h2 {
+        font-size: 30px;
+    }
+
+    .checkboxItem {
+        font-size: 22px;
+    }
+
+
+    .checkboxItem input {
+        width: 25px;
+        height: 25px;
+    }
+
+    .checkboxItem img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+
+    .closeBtn,
+    .AddBtn {
+        width: 145px;
+        height: 50px;
+
+        font-size: 17px;
+
+    }
+
+}

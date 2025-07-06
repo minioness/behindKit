@@ -189,7 +189,6 @@
     gap: 5px;
 }
 
-.editBtn,
 .deleteBtn {
     border: none;
     background-color: transparent;
@@ -228,3 +227,449 @@
     
 }
 
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .myKitPageContainer {
+        gap: 20px;
+        padding-top: 50px;
+    }
+
+    .title {
+        font-size: 17px;
+        gap: 100px;
+    }
+
+    .title a img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .createKitContainer {
+        padding: 15px;
+        height: auto;
+    }
+
+
+    .createKit {
+        margin-left: 0;
+        margin-right: 0;
+        flex: 1;
+    }
+
+    .createKit h2 {
+        font-size: 15px;
+        margin-top: 10px;
+
+    }
+
+    .createKit p {
+        font-size: 10px;
+        margin-bottom: 40px;
+    }
+
+
+    .createKit button {
+
+        width: 120px;
+        height: 30px;
+
+        font-size: 12px;
+        font-weight: 500;
+
+    }
+
+    .createKit button img {
+        width: 20px;
+        height: 20px;
+
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+
+    .myKitBoxImg {
+        display: none;
+    }
+
+
+    .kitList {
+        grid-template-columns: repeat(2, auto);
+        gap: 20px;
+        padding: 0;
+        justify-content: flex-start;
+
+    }
+
+    .kitCard {
+        width: 130px;
+        height: 220px;
+    }
+
+
+    .kitInfo {
+        padding: 5px;
+    }
+
+    .kitInfo h3 {
+        font-size: 10px;
+    }
+
+    .kitInfo p {
+        font-size: 8px; 
+    }
+
+
+    .trashIcon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .empty img {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+
+    .empty p {
+        font-size: 13px; 
+    }
+ 
+
+}
+
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .title {
+        font-size: 22px;
+        gap: 240px;
+    }
+
+    .title a img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .createKitContainer {
+        padding: 20px;
+        height: auto;
+    }
+
+
+    .createKit {
+        margin-left: 0;
+        margin-right: 0;
+        flex: 1;
+    }
+
+    .createKit h2 {
+        font-size: 17px;
+        margin-top: 10px;
+
+    }
+
+    .createKit p {
+        font-size: 11px;
+        margin-bottom: 40px;
+    }
+
+
+    .createKit button {
+
+        width: 130px;
+        height: 35px;
+
+        font-size: 12px;
+        font-weight: 500;
+
+    }
+
+    .createKit button img {
+        width: 20px;
+        height: 20px;
+
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .myKitBoxImg {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .myKitBoxImg img {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .kitList {
+        grid-template-columns: repeat(4, auto);
+        gap: 20px;
+        padding: 0;
+        justify-content: flex-start;
+
+    }
+
+    .kitCard {
+        width: 130px;
+        height: 220px;
+    }
+
+
+    .kitInfo {
+        padding: 5px;
+    }
+
+    .kitInfo h3 {
+        font-size: 10px;
+    }
+
+    .kitInfo p {
+        font-size: 8px; 
+    }
+
+
+    .trashIcon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .empty img {
+        width: 90px;
+        height: 90px;
+
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+
+    .empty p {
+        font-size: 20px;  
+    }
+
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .title {
+        font-size: 27px;
+        gap: 250px;
+    }
+
+    .title a img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .createKitContainer {
+        padding: 20px;
+        height: auto;
+    }
+
+
+    .createKit {
+        margin-left: 0;
+        margin-right: 0;
+        flex: 1;
+    }
+
+    .createKit h2 {
+        font-size: 18px;
+        margin-top: 10px;
+
+    }
+
+    .createKit p {
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+
+
+    .createKit button {
+
+        width: 140px;
+        height: 37px;
+
+        font-size: 12px;
+        font-weight: 500;
+
+    }
+
+    .createKit button img {
+        width: 20px;
+        height: 20px;
+
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .myKitBoxImg {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .myKitBoxImg img {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .kitList {
+        grid-template-columns: repeat(4, auto);
+        gap: 15px;
+        padding: 0;
+        justify-content: flex-start;
+
+    }
+
+    .kitCard {
+        width: 145px;
+        height: 220px;
+    }
+
+
+    .kitInfo {
+        padding: 5px;
+    }
+
+    .kitInfo h3 {
+        font-size: 11px;
+    }
+
+    .kitInfo p {
+        font-size: 9px; 
+    }
+
+
+    .trashIcon {
+        width: 13px;
+        height: 13px;
+
+    }
+
+
+
+    .empty img {
+        width: 90px;
+        height: 90px;
+
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+
+    .empty p {
+        font-size: 20px;
+        
+    }
+
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+ 
+    .title {
+        font-size: 30px;
+        gap: 350px;
+    }
+
+    .title a img {
+        width: 30x;
+        height: 30px;
+    }
+
+    .createKitContainer {
+        padding: 20px 40px;
+        height: auto;
+    }
+
+
+    .createKit {
+        margin-left: 0;
+        margin-right: 0;
+        flex: 1;
+    }
+
+    .createKit h2 {
+        font-size: 18px;
+        margin-top: 10px;
+
+    }
+
+    .createKit p {
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+
+
+    .createKit button {
+
+        width: 140px;
+        height: 37px;
+
+        font-size: 12px;
+        font-weight: 500;
+
+    }
+
+    .createKit button img {
+        width: 20px;
+        height: 20px;
+
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .myKitBoxImg {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .myKitBoxImg img {
+        width: 140px;
+        height: 140px;
+    }
+
+
+    .kitList {
+        grid-template-columns: repeat(4, auto);
+        gap: 30px;
+        padding: 0;
+        justify-content: flex-start;
+
+    }
+
+    .kitCard {
+        width: 175px;
+        height: 220px;
+    }
+
+
+    .kitInfo {
+        padding: 5px;
+    }
+
+    .kitInfo h3 {
+        font-size: 13px;
+    }
+
+    .kitInfo p {
+        font-size: 10px; 
+    }
+
+
+    .trashIcon {
+        width: 14px;
+        height: 14px;
+    }
+
+
+}

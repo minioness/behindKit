@@ -168,7 +168,7 @@ export default function KitDetailModal ({
                                 <span>{t.title}</span>
                             </div>
                             <div className={styles.btnGroup}>
-                                <button onClick={() => handleRemoveTemplate(t.id)}><FiTrash2 size={18} /></button>
+                                <button onClick={() => handleRemoveTemplate(t.id)}><FiTrash2 size={18} className={styles.icon}/></button>
                                 <a href={t.fileUrl} download="my-template.pdf">
                                     <img src='/src/assets/img/button/downloadIcon.png' alt='다운로드 아이콘' />
                                 </a>

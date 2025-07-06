@@ -27,7 +27,6 @@
 
 .contentWrapper {
     display: flex;
-    align-items: stretch;
     width: 80%;
     max-width: 1500px;
 
@@ -41,3 +40,65 @@
 
 
 
+/* 모바일 */
+@media (max-width: 767px) {
+    .cartPageContainer {
+        gap: 25px;
+        padding-top: 50px;
+    }
+
+    .wishListPageContainer {
+        padding-top: 50px;
+        gap: 10px;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+    
+
+    .contentWrapper {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .title {
+        font-size: 22px;
+    }
+
+    .contentWrapper {
+        flex-direction: column;
+    }
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .title {
+        font-size: 27px;
+    }
+
+    .contentWrapper {
+        flex-direction: column;
+    }
+
+
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+ 
+    .title {
+        font-size: 30px;
+    }
+
+    .contentWrapper {
+        flex-direction: column;
+    }
+
+}

@@ -60,7 +60,7 @@
 }
 
 
-.Btn {
+.btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -228,3 +228,441 @@
 
 
 
+
+
+@media (max-width: 767px) {
+
+    .ordersContainer {
+        gap: 25px;
+        padding-top: 50px;
+
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    .ordersWrapper,
+    .noOrdersWrapper {
+        padding: 15px;
+    }
+
+    .orderInfo {
+        font-size: 12px;
+
+        padding-left: 0;
+        padding-right: 0;
+        
+        margin-bottom: 20px;
+    }
+
+    .orderInfo span:first-child {
+        font-size:  18px;
+    }
+
+    .itemWrapper {
+
+        margin-bottom: 20px;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .items {
+        gap: 10px;
+    }
+
+    .itemImg {
+        width: 90px;
+        height: 90px;
+
+        border-radius: 12px;
+    }
+
+
+    .itemTitle,
+    .itemPrice {
+        font-size: 12px;
+    }
+
+    .itemCategory {
+        font-size: 10px;
+    }
+
+    .btnGroup {
+        gap: 15px;
+    }
+
+    .downloadBtn {
+        width: 30px;
+        height: 30px;
+        
+    }
+
+
+    .downloadBtn img {
+        width: 20px;
+        height: 20px;
+
+    }
+
+
+    .cartBtn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .cartBtn img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .totalPrice {
+        font-size: 12px;
+
+        padding-left: 10px;
+        padding-right: 30px;
+    }
+
+    .totalPrice span:nth-child(2) {
+        font-size: 17px;
+    }
+
+    .orderComment {
+        font-size: 12px;
+    }
+
+    .noOrdersWrapper {
+        gap: 15px;
+    }
+
+
+    .btn {
+        width: 120px;
+        height: 30px;
+        
+        font-size: 12px;
+    }
+
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .title {
+        font-size: 22px;
+    }
+
+    .ordersWrapper,
+    .noOrdersWrapper {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .orderInfo {
+        font-size: 14px;
+
+        padding-left: 0;
+        padding-right: 0;
+        
+        margin-bottom: 20px;
+    }
+
+    .orderInfo span:first-child {
+        font-size:  20px;
+    }
+
+    .itemWrapper {
+        margin-bottom: 20px;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .items {
+        gap: 15px;
+    }
+
+    .itemImg {
+        width: 140px;
+        height: 140px;
+
+        border-radius: 12px;
+    }
+
+
+    .itemTitle,
+    .itemPrice {
+        font-size: 17px;
+    }
+
+    .itemCategory {
+        font-size: 12px;
+    }
+
+    .btnGroup {
+        gap: 20px;
+
+    }
+
+    .downloadBtn {
+        width: 40px;
+        height: 40px;
+        
+    }
+
+
+    .downloadBtn img {
+        width: 30px;
+        height: 30px;
+
+    }
+
+
+    .cartBtn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cartBtn img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .totalPrice {
+        font-size: 17px;
+
+        padding-left: 20px;
+        padding-right: 30px;
+    }
+
+    .totalPrice span:nth-child(2) {
+        font-size: 20px;
+    }
+
+
+    .orderComment {
+        font-size: 16px;
+    }
+
+
+    .btn {
+        max-width: 130px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .title {
+        font-size: 27px;
+    }
+
+
+    .ordersWrapper,
+    .noOrdersWrapper {
+        padding: 25px;
+    }
+
+    .orderInfo {
+        font-size: 15px;
+
+        padding-left: 0;
+        padding-right: 0;
+        
+        margin-bottom: 20px;
+    }
+
+    .orderInfo span:first-child {
+        font-size:  22px;
+    }
+
+    .itemWrapper {
+        margin-bottom: 20px;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .items {
+        gap: 17px;
+    }
+
+    .itemImg {
+        width: 150px;
+        height: 150px;
+
+        border-radius: 12px;
+    }
+
+
+    .itemTitle,
+    .itemPrice {
+        font-size: 19px;
+    }
+
+    .itemCategory {
+        font-size: 14px;
+    }
+
+    .btnGroup {
+        gap: 20px;
+
+    }
+
+    .downloadBtn {
+        width: 45px;
+        height: 45px;
+        
+    }
+
+
+    .downloadBtn img {
+        width: 35px;
+        height: 35px;
+
+    }
+
+
+    .cartBtn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .cartBtn img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .totalPrice {
+        font-size: 19px;
+
+        padding-left: 20px;
+        padding-right: 30px;
+    }
+
+    .totalPrice span:nth-child(2) {
+        font-size: 22px;
+    }
+
+    .orderComment {
+        font-size: 18px;
+    }
+
+
+    .btn {
+        max-width: 170px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+ 
+    .title {
+        font-size: 30px;
+    }
+
+    .ordersWrapper,
+    .noOrdersWrapper {
+        padding: 30px;
+    }
+
+    .orderInfo {
+        font-size: 17px;
+
+        padding-left: 0;
+        padding-right: 0;
+        
+        margin-bottom: 20px;
+    }
+
+    .orderInfo span:first-child {
+        font-size:  27px;
+    }
+
+    .itemWrapper {
+        margin-bottom: 20px;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .items {
+        gap: 20px;
+    }
+
+    .itemImg {
+        width: 170px;
+        height: 170px;
+
+        border-radius: 12px;
+    }
+
+
+    .itemTitle,
+    .itemPrice {
+        font-size: 20px;
+    }
+
+    .itemCategory {
+        font-size: 15px;
+    }
+
+    .btnGroup {
+        gap: 20px;
+
+    }
+
+    .downloadBtn {
+        width: 50px;
+        height: 50px;
+        
+    }
+
+
+    .downloadBtn img {
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+    .cartBtn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .cartBtn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .totalPrice {
+        font-size: 20px;
+
+        padding-left: 20px;
+        padding-right: 30px;
+    }
+
+    .totalPrice span:nth-child(2) {
+        font-size: 26px;
+    }
+    
+    .orderComment {
+        font-size: 20px;
+    }
+
+    .btn {
+        max-width: 190px;
+        height: 45px;
+        font-size: 20px;
+        border-radius: 15px;
+    }
+
+}

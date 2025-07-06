@@ -41,6 +41,7 @@
 .totalRow {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   margin-bottom: 20px;
   padding-top: 10px;
@@ -130,4 +131,100 @@
     color: #E35050;
     background-color: #fde4e4;
     font-weight: 500;
+}
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .cartSummaryContainer {
+    width: 100%;
+  }
+
+  .title  {
+    font-size: 15px;
+  }
+
+  .row {
+    font-size: 12px;
+  }
+
+  .divider {
+    margin: 10px 0;
+  }
+
+
+  .totalRow {
+    margin-bottom: 20px;
+    padding-top: 10px;
+
+    font-size: 15px;
+  }
+
+  .totalRow em {
+    font-size: 10px;
+    margin-left: 2px;
+  }
+
+  .finalPrice {
+    font-size: 17px;
+  }
+
+
+  .dropdownBox {
+    
+    padding: 5px;
+    margin-bottom: 5px;
+
+}
+
+
+  .dropdownBox summary {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+
+  .dropdownBox p {
+    font-size: 8px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+  }
+
+
+  .agree p {
+    font-size: 9px;
+  }
+
+
+  .payButton {
+    height: 30px;
+    font-size: 12px;
+  }
+
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .cartSummaryContainer {
+      width: 100%;
+  }
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .cartSummaryContainer {
+      width: 100%;
+}
+
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+ 
+    .cartSummaryContainer {
+      width: 100%;
+}
+
 }

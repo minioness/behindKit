@@ -33,8 +33,10 @@
     position: relative;
     gap: 100px;
 
-    width: 1010px;
+    width: 100%;
+    max-width: 1010px;
     height: 280px;
+    
     background-color: #F3F3F3;
 
     border-radius: 20px;
@@ -80,9 +82,9 @@
 }
 
 
-.userChangeInfoBtn img{
-    width: 20px;
-    height: 20px;
+.userChangeInfo img{
+    width: 25px;
+    height: 25px;
 }
 
 
@@ -133,4 +135,324 @@
     cursor: pointer;
 
     font-size: 15px;
+}
+
+
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .mypageContainer {
+        gap: 20px;
+    }
+    
+    .title {
+        font-size: 17px;
+    }
+
+    .userInfoWrapper {
+        flex-direction: column;
+   
+        gap: 35px;
+
+        max-width: 300px;
+        height: 280px;
+
+        padding: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .profileImg{
+        width: 80px;
+        height: 80px;
+        margin-left: 0;
+    }
+
+    .userInfo {
+        gap: 5px;
+    }
+
+    .userName,
+    .userEmail {
+        font-size: 12px;
+    }
+
+    .userName span {
+        font-size: 22px;
+    }
+
+
+    .userChangeInfo img{
+        width: 17px;
+        height: 17px;
+    }
+
+    .buttonArea {
+        gap: 20px;
+    }
+
+
+    .buttonArea a {
+        font-size: 12px;
+
+        width: 130px;
+        height: 35px;
+        
+        border-radius: 15px;
+    }
+
+
+    .mykitBtn {
+        font-size: 12px;
+
+        border-radius: 15px;
+
+        width: 130px;
+        height: 35px;
+    }
+
+
+
+    .logoutBtn {
+        font-size: 12px;
+    }
+
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .title {
+        font-size: 22px;
+    }
+
+    .userInfoWrapper {
+   
+        gap: 35px;
+
+        max-width: 600px;
+        height: 230px;
+
+        padding: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .profileImg {
+        width: 120px;
+        height: 120px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .userInfo {
+        gap: 5px;
+    }
+
+    .userName,
+    .userEmail {
+        font-size: 20px;
+    }
+
+    .userName span {
+        font-size: 30px;
+    }
+
+
+    .userChangeInfo img{
+        width: 20px;
+        height: 20px;
+
+    }
+
+    .buttonArea {
+        gap: 20px;
+    }
+
+
+    .buttonArea a {
+        font-size: 15px;
+
+        width: 240px;
+        height: 40px;
+        
+        border-radius: 15px;
+    }
+
+
+    .mykitBtn {
+        font-size: 15px;
+
+        border-radius: 15px;
+
+        width: 240px;
+        height: 40px;
+    }
+
+
+
+    .logoutBtn {
+        font-size: 15px;
+    }
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .title {
+        font-size: 27px;
+    }
+
+    .userInfoWrapper {
+   
+        gap: 35px;
+
+        max-width: 650px;
+        height: 230px;
+
+        padding: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .profileImg {
+        width: 120px;
+        height: 120px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .userInfo {
+        gap: 5px;
+    }
+
+    .userName,
+    .userEmail {
+        font-size: 22px;
+    }
+
+    .userName span {
+        font-size: 32px;
+    }
+
+
+    .userChangeInfo img{
+        width: 22px;
+        height: 22px;
+
+    }
+
+    .buttonArea {
+        gap: 20px;
+    }
+
+
+    .buttonArea a {
+        font-size: 17px;
+
+        width: 260px;
+        height: 40px;
+        
+        border-radius: 15px;
+    }
+
+
+    .mykitBtn {
+        font-size: 17px;
+
+        border-radius: 15px;
+
+        width: 260px;
+        height: 40px;
+    }
+
+
+
+    .logoutBtn {
+        font-size: 17px;
+    }
+
+
+
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+ 
+    .title {
+        font-size: 30px;
+    }
+
+   .userInfoWrapper {
+   
+        gap: 35px;
+
+        max-width: 800px;
+        height: 230px;
+
+        padding: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .profileImg {
+        width: 140px;
+        height: 140px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .userInfo {
+        gap: 5px;
+    }
+
+    .userName,
+    .userEmail {
+        font-size: 24px;
+    }
+
+    .userName span {
+        font-size: 34px;
+    }
+
+
+    .userChangeInfo img{
+        width: 24px;
+        height: 24px;
+
+    }
+
+    .buttonArea {
+        gap: 20px;
+    }
+
+
+    .buttonArea a {
+        font-size: 20px;
+
+        width: 300px;
+        height: 45px;
+        
+        border-radius: 15px;
+    }
+
+
+    .mykitBtn {
+        font-size: 20px;
+
+        border-radius: 15px;
+
+        width: 300px;
+        height: 45px;
+    }
+
+
+
+    .logoutBtn {
+        font-size: 20px;
+    }
+
+
+
 }

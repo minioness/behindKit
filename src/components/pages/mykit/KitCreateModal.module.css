@@ -40,7 +40,7 @@
 
 .kitNameInput,
 .kitDescriptionInput {
-    width: 90%;
+    width: 100%;
     height: 50px;
     font-size: 18px;
     padding: 10px;
@@ -69,6 +69,7 @@
     flex-direction: column;
     overflow-y: auto;
     gap: 20px;
+    flex: 1;
 }
 
 
@@ -134,4 +135,185 @@
 
     color: white;
     background-color: #E35050;
+}
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .modalTitle {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .modalContent {
+        gap: 10px;
+        padding: 25px;
+    }
+
+    .kitName,
+    .kitDescription {
+        font-size: 15px;
+    }
+
+    .kitNameInput,
+    .kitDescriptionInput {
+        width: 100%;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .listTitle {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+
+    .templateList {
+        gap: 20px;
+    }
+
+
+    .checkboxItem {
+        font-size: 13px;
+        height: auto;
+    }
+
+    .checkboxItem input {
+        width: 20px;
+        height: 20px;
+    }
+
+    .checkboxItem img {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .cancelButton,
+    .createButton {
+        width: 120px;
+        height: 40px;
+
+    }
+
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .modalTitle {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .modalContent {
+        gap: 10px;
+        padding: 40px;
+    }
+
+    .kitName,
+    .kitDescription {
+        font-size: 18px;
+    }
+
+    .kitNameInput,
+    .kitDescriptionInput {
+        width: 100%;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .listTitle {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+
+    .templateList {
+        gap: 20px;
+    }
+
+
+    .checkboxItem {
+        font-size: 18px;
+        height: auto;
+    }
+
+    .checkboxItem input {
+        width: 22px;
+        height: 22px;
+    }
+
+    .checkboxItem img {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .cancelButton,
+    .createButton {
+        width: 140px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .modalTitle {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .modalContent {
+        gap: 10px;
+        padding: 40px;
+    }
+
+    .kitName,
+    .kitDescription {
+        font-size: 20px;
+    }
+
+    .kitNameInput,
+    .kitDescriptionInput {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .listTitle {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+
+    .templateList {
+        gap: 20px;
+    }
+
+
+    .checkboxItem {
+        font-size: 20px;
+        height: auto;
+    }
+
+    .checkboxItem input {
+        width: 22px;
+        height: 22px;
+    }
+
+    .checkboxItem img {
+        width: 95px;
+        height: 95px;
+    }
+
+
+    .cancelButton,
+    .createButton {
+        width: 150px;
+        height: 50px;
+        font-size: 20px;
+    }
+
 }

@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     background-color: white;
-    padding-top: 80px;
+    padding-top: 100px;
 
     display: flex;
     flex-direction: column;
@@ -19,6 +19,9 @@
     width: 80%;
 
     border-bottom: 1px solid #464646;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .title h1 {
@@ -28,7 +31,11 @@
 
 .editWrapper {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
 }
 
 
@@ -41,7 +48,8 @@
     position: relative;
     gap: 20px;
 
-    width: 1010px;
+    width: 100%;
+    max-width: 1010px;
     height: auto;
     background-color: #F3F3F3;
 
@@ -49,7 +57,8 @@
 
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     padding: 50px;
-    margin-bottom: 30px;
+
+    margin-bottom: 50px;
 
 }
 
@@ -63,9 +72,11 @@
     flex-direction: column;
 
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex: 1fr;
     gap: 20px;
+     
+    width: 100%;
 }
 
 .userInfo div {
@@ -73,6 +84,8 @@
 
     justify-content: center;
     align-items: center;
+
+    width: 100%;
 
     font-size: 18px;
     font-weight: 500;
@@ -85,7 +98,8 @@
 }
 
 .inputField {
-    width: 430px;
+    width: 100%;
+    max-width: 430px;
     height: 60px;
     font-size: 18px;
 
@@ -123,7 +137,7 @@ input[readonly]:focus {
     justify-content: center;
     gap: 60px;
 
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .editBtn {
@@ -157,4 +171,258 @@ input[readonly]:focus {
     font-weight: bold;
 
     cursor: pointer;
+}
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+
+    .editContainer {
+        padding-top: 50px;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    .userInfoWrapper {
+        max-width: 300px;
+        padding: 20px;
+        margin-bottom: 50px;
+
+    }
+
+    .userInfoWrapper img {
+        width: 80px;
+        height: 80px;
+    }
+
+
+    .userInfo div {
+        font-size: 10px;
+        gap: 20px;
+    }
+
+    .userInfo div label {
+        width: 90px;
+    }
+
+    .inputField {
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .btnGroup {
+        gap: 30px;
+    }
+
+    .editBtn {
+        width: 120px;
+        height: 30px;
+
+        border-radius: 12px;
+
+        font-size: 12px;
+    
+    }
+
+
+    .cancelBtn {
+        width: 120px;
+        height: 30px;
+
+        border-radius: 12px;
+
+        font-size: 12px;
+
+    }
+}
+
+/* 테블릿 */
+/* 작은 태블릿: mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .title {
+        font-size: 22px;
+    }
+
+    .userInfoWrapper {
+        max-width: 450px;
+        padding: 30px;
+        margin-bottom: 50px;
+
+    }
+
+    .userInfoWrapper img {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .userInfo div {
+        font-size: 12px;
+        gap: 20px;
+
+    }
+
+    .userInfo div label {
+        width: 100px;
+    }
+
+    .inputField {
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .btnGroup {
+        gap: 30px;
+    }
+
+    .editBtn {
+        width: 140px;
+        height: 35px;
+
+        border-radius: 12px;
+
+        font-size: 14px;
+    
+    }
+
+
+    .cancelBtn {
+        width: 140px;
+        height: 35px;
+
+        border-radius: 12px;
+
+        font-size: 14px;
+
+    }
+
+
+}
+
+/* 중간 태블릿: Air */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .title {
+        font-size: 27px;
+    }
+
+    .userInfoWrapper {
+        max-width: 470px;
+        padding: 30px 40px;
+        margin-bottom: 50px;
+
+    }
+
+    .userInfoWrapper img {
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .userInfo div {
+        font-size: 14px;
+        gap: 20px;
+
+    }
+
+    .userInfo div label {
+        width: 100px;
+    }
+
+    .inputField {
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .btnGroup {
+        gap: 30px;
+    }
+
+    .editBtn {
+        width: 160px;
+        height: 40px;
+
+        border-radius: 12px;
+
+        font-size: 15px;
+    
+    }
+
+
+    .cancelBtn {
+        width: 160px;
+        height: 40px;
+
+        border-radius: 12px;
+
+        font-size: 15px;
+
+    }
+
+
+}
+
+/* 큰 태블릿~작은 PC: iPad Pro 가로 이상 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+ 
+    .title {
+        font-size: 30px;
+    }
+
+    
+    .userInfoWrapper {
+        max-width: 540px;
+        padding: 30px 60px;
+        margin-bottom: 50px;
+
+    }
+
+    .userInfoWrapper img {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .userInfo div {
+        font-size: 16px;
+        gap: 20px;
+
+    }
+
+    .userInfo div label {
+        width: 100px;
+    }
+
+    .inputField {
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .btnGroup {
+        gap: 30px;
+    }
+
+    .editBtn {
+        width: 170px;
+        height: 45px;
+
+        border-radius: 12px;
+
+        font-size: 16px;
+    
+    }
+
+
+    .cancelBtn {
+        width: 170px;
+        height: 45px;
+
+        border-radius: 12px;
+
+        font-size: 16px;
+
+    }
+
+
 }
