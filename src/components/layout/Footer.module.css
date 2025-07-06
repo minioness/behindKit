@@ -53,5 +53,37 @@
     font-weight: 500;
 
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    height: 100%;
 }
+
+.copyright p {
+  margin-top: auto;
+}
+
+
+/* 모바일 */
+@media (max-width: 767px){
+    .wrapper {
+        padding: 10px 15px;
+        flex-direction: column;
+    }
+
+    .info {
+        gap: 10px;
+    }
+
+    .customerService,
+    .companyInfo,
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+
+/* 테블릿 */
+@media (min-width: 768px) and  (max-width: 1199px) {
+
+
+}
+

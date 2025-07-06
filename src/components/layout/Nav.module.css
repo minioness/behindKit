@@ -147,6 +147,11 @@
 
 /* 모바일 */
 @media (max-width: 767px){
+    .wrapper {
+        height: 50px;
+    }
+    
+
     .navRight a,
     .navRight .cartBtn,
     .navRight .myPageBtn {
@@ -170,9 +175,14 @@
 }
 
 
-/* 테블릿 세로 */
-@media (min-width: 768px) and (max-width: 991px) {
-   .navLeft a img {
+/* 테블릿 */
+@media (min-width: 768px) and  (max-width: 1199px) {
+
+    .wrapper {
+        height: 70px;
+    }
+
+    .navLeft a img {
         width: 150px;
         height: 50px;
     }
@@ -183,10 +193,4 @@
     }
 }
 
-/* 테블릿 가로 */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .navLeft a img {
-        width: 150px;
-        height: 50px;
-    }
-}
+

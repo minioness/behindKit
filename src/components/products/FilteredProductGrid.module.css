@@ -18,3 +18,17 @@
   color: white;
   border-radius: 10px;
 }
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .pageButton {
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+}
+

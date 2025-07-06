@@ -102,7 +102,7 @@ h3, p {
 }
 
 .price {
-    font: 20px;
+    font-size: 20px;
     font-weight : bold;
 }
 
@@ -112,3 +112,110 @@ h3, p {
 }
 
 
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .grid {
+        grid-template-columns: repeat(2, auto);
+        gap: 18px;
+        padding: 0 10px;
+    }
+
+    .card {
+        height: 280px;
+        gap: 7px;
+    }
+
+
+    .wishButton {
+        bottom: 7px;
+        right: 7px;
+
+    }
+
+    .wishButton img {
+        width: 17px;
+        height: 17px;
+    }
+
+
+    .cartArea {
+        height: 25px;
+        font-size: 12px;
+        border-radius: 7px;
+        gap: 10px;
+    }
+
+    .cartArea img {
+        width: 14px;
+        height: 14px;
+    }
+
+
+    .title {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+    .category {
+        font-size: 9px;
+    }
+
+}
+
+
+/* 테블릿 세로 */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .grid {
+        grid-template-columns: repeat(4, auto);
+        gap: 25px;
+        padding: 0 13px;
+    }
+
+    .card {
+        height: 320px;
+    }
+
+
+    .wishButton {
+        bottom: 5px;
+        right: 5px;
+
+    }
+
+    .wishButton img {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .cartArea {
+        height: 35px;
+        font-size: 14px;
+        border-radius: 7px;
+        gap: 10px;
+    }
+
+    .cartArea img {
+        width: 18px;
+        height: 18px;
+    }
+
+
+    .title {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .category {
+        font-size: 12px;
+    }
+
+}
