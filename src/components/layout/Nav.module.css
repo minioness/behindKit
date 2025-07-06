@@ -55,16 +55,19 @@
 
 }
 
-.hamburgerBtn button,
-.myPageBtn {
+.myPageBtn,
+.hamburgerBtn button {
     border: none;
     background-color: transparent;
 
     cursor: pointer;
 }
 
+
 .hamburgerBtn {
     position: relative;
+
+    display: none;
 }
 
 
@@ -111,7 +114,8 @@
 }
 
 
-.moveBtn:hover {
+.moveBtn:hover,
+.logoutBtn:hover {
     background-color: #E35050;
     color: white;
     border-radius: 15px;
@@ -120,19 +124,46 @@
 
 }
 
-.hamburgerArea button {
+.logoutBtn {
     border: none;
     color: #464646;
     font-size: 18px;
-    padding: 5px 10px;
+    padding: 10px;
+    margin-top: 5px;
+
+    display: flex;
+    align-items: center;
 }
 
 
 .hamburgerArea.active {
     opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 
+/* 모바일 */
+@media (max-width: 767px){
+    .navRight a,
+    .navRight .cartBtn,
+    .navRight .myPageBtn {
+        display: none;
+    }
+
+    .hamburgerBtn {
+        display: block;
+    }
+}
+
+
+/* 테블릿 세로 */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+/* 테블릿 가로 */
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+}
