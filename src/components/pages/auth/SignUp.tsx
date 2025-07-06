@@ -61,42 +61,42 @@ export default function SignUp() {
           </div>
 
           <form className={styles.signUpArea} onSubmit={handleSignup}>
-            <div className={styles.inputName}>
-              <p>이름</p>
+              <p className={styles.inputName}>이름</p>
               <input 
                 type='text'
                 placeholder='이름을 입력해주세요'
                 value={name}
                 onChange={e => setName(e.target.value)}
+                className={styles.inputField}
               />
 
-              <p>닉네임</p>
+              <p className={styles.inputName}>닉네임</p>
               <input 
                 type='text'
                 placeholder='닉네임을 입력해주세요'
                 value={nickName}
                 onChange={e => setNickName(e.target.value)}
+                className={styles.inputField}
               />
-            </div>
-            <div className={styles.inputId}>
-              <p>이메일</p>
+
+              <p className={styles.inputId}>이메일</p>
               <input 
                 type='text'
                 placeholder='이메일을 입력해주세요.'
                 value={email}
                 onChange={e => setEmail(e.target.value)}
+                className={styles.inputField}
               />
-            </div>
 
-            <div className={styles.inputPwd}>
-              <p>비밀번호</p>
+
+              <p className={styles.inputPwd}>비밀번호</p>
               <input 
                 type='password'
                 placeholder='비밀번호를 입력해주세요.'
                 value={password}
                 onChange={e => setPassword(e.target.value)}
+                className={styles.inputField}
               />
-            </div>
 
             <button type='submit' className={styles.signUpBtn}>회원가입</button>
           </form>
