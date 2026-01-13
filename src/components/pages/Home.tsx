@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useProducts } from '../../hooks/useProducts';
 import { FiSearch } from 'react-icons/fi';
 
-
 import Slider from '../common/Slider';
 import FilteredProductGrid from '../products/FilteredProductGrid';
 
@@ -30,8 +29,10 @@ export default function Home() {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
-        categoryRef.current && !categoryRef.current.contains(e.target as Node) &&
-        sortRef.current && !sortRef.current.contains(e.target as Node)
+        categoryRef.current &&
+        !categoryRef.current.contains(e.target as Node) &&
+        sortRef.current &&
+        !sortRef.current.contains(e.target as Node)
       ) {
         setShowCategoryList(false);
         setShowSortList(false);
@@ -85,11 +86,7 @@ export default function Home() {
         <div className={styles.categoryBtnWrapper} ref={categoryRef}>
           <button className={styles.categoryToggleBtn} onClick={toggleCategoryList}>
             {selectedCategory}
-            <img
-              src="/src/assets/img/button/arrowIcon.svg"
-              alt="화살표 아이콘"
-              className={styles.arrowIcon}
-            />
+            <img src="/assets/img/button/arrowIcon.svg" alt="화살표 아이콘" className={styles.arrowIcon} />
           </button>
 
           <div className={cx(styles.categoryGroup, { [styles.show]: showCategoryList })}>
@@ -109,11 +106,7 @@ export default function Home() {
         <div className={styles.sortBtnWrapper} ref={sortRef}>
           <button className={styles.sortToggleBtn} onClick={toggleSortList}>
             {selectedSort}
-            <img
-              src="/src/assets/img/button/arrowIcon.svg"
-              alt="화살표 아이콘"
-              className={styles.arrowIcon}
-            />
+            <img src="/assets/img/button/arrowIcon.svg" alt="화살표 아이콘" className={styles.arrowIcon} />
           </button>
 
           <div className={cx(styles.sortGroup, { [styles.show]: showSortList })}>
