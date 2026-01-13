@@ -94,7 +94,7 @@ export default function EditInfo({ user }: RouterProps) {
 
       <div className={styles.editWrapper}>
         <div className={styles.userInfoWrapper}>
-          <img src="/src/assets/img/profileImg.svg" alt="프로필 이미지" className={styles.profileImg} />
+          <img src="/assets/img/profileImg.svg" alt="프로필 이미지" className={styles.profileImg} />
 
           <div className={styles.userInfo}>
             <div>
